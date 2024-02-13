@@ -1,0 +1,36 @@
+.Button {
+    cursor: pointer;
+}
+
+.primary {
+    padding: 10px 15px;
+    background-color: var(--primary-btn-color);
+    border: none;
+    border-radius: 10px;
+    min-width: 138px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    color: var(--default-btn-text-color);
+    text-transform: uppercase;
+}
+
+.filled {
+    padding: 10px 15px;
+    background-color: var(--thirdy-btn-color);
+    border: none;
+    border-radius: 10px;
+    min-width: 138px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.clear {
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+}

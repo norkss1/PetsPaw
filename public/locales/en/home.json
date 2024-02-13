@@ -1,0 +1,11 @@
+{
+  "title_home_page": "Hi intern!",
+  "subtitle_home_page": "Welcome to MSI 2021 Front-end test",
+  "start_using_title": "Lets start using The Dogs API",
+  "navbar": {
+    "home": "home",
+    "voting": "voting",
+    "breeds": "breeds",
+    "gallery": "gallery"
+  }
+}

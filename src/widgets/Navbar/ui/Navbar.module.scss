@@ -1,0 +1,39 @@
+.Navbar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--navbar-width);
+    height: var(--navbar-height);
+    background: var(--bg-color);
+
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%;
+        max-width: 490px;
+        height: 100%;
+    }
+}
+
+.switchers {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.links {
+    .link {
+        margin-right: 16px;
+    }
+
+    .link:last-child {
+        margin-left: 16px;
+    }
+}

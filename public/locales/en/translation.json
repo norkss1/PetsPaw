@@ -1,0 +1,11 @@
+{
+  "main_page_title": "MainPage",
+  "about_page_title": "AboutPage",
+  "page_not_found": "Page not found",
+  "error_boundary": {
+    "error_boundary_title": "Oops. Something went wrong.",
+    "error_boundary_text": "Please, reload page.",
+    "reload_page": "Reload page",
+    "throw_error": "Throw error"
+  }
+}

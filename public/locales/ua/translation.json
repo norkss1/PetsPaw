@@ -1,0 +1,11 @@
+{
+  "main_page_title": "Головна сторінка",
+  "about_page_title": "Про нас",
+  "page_not_found": "Сторінку не знайдено",
+  "error_boundary": {
+    "error_boundary_title": "Отакої. Сталась якась помилка.",
+    "error_boundary_text": "Будь-ласка, перезавантажте сторінку.",
+    "reload_page": "Перезавантажити сторінку",
+    "throw_error": "Прокинути помилку"
+  }
+}

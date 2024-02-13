@@ -1,0 +1,13 @@
+.AppLink {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: var(--primary-btn-color);
+    border-radius: 10px;
+    min-width: 138px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--default-btn-text-color);
+}
