@@ -1,23 +1,49 @@
 .Button {
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .primary {
-    padding: 10px 15px;
-    background-color: var(--primary-btn-color);
+    padding: 0 30px;
     border: none;
     border-radius: 10px;
-    min-width: 138px;
-    font-size: 12px;
-    line-height: 16px;
+    min-width: 143px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 500;
     letter-spacing: 2px;
-    color: var(--default-btn-text-color);
     text-transform: uppercase;
+    background-color: var(--primary-bg-btn-color);
+    color: var(--primary-btn-color);
+}
+
+.secondary {
+    padding: 0 30px;
+    border: none;
+    border-radius: 10px;
+    min-width: 143px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: var(--primary-bg-btn-color);
+    color: var(--primary-btn-color);
+}
+
+.thirty {
+    padding: 0 10px;
+    border: none;
+    border-radius: 10px;
+    min-width: 40px;
+    height: 40px;
+    background-color: var(--secondary-bg-btn-color);
+    color: var(--thirty-btn-color);
 }
 
 .filled {
     padding: 10px 15px;
-    background-color: var(--thirdy-btn-color);
+    background-color: var(--thirty-btn-color);
     border: none;
     border-radius: 10px;
     min-width: 138px;

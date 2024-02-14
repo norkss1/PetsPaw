@@ -4,7 +4,8 @@ import cls from './Button.module.scss';
 
 export enum ThemeButton {
     PRIMARY = 'primary',
-    FILLED = 'filled',
+    SECONDARY = 'secondary',
+    THIRTY = 'thirty',
     CLEAR = 'clear'
 }
 

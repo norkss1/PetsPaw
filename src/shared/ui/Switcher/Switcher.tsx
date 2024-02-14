@@ -4,12 +4,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Switcher.module.scss';
 
 interface SwitcherProps {
-  className?: string
+  className?: string;
+  initialEnabled: boolean;
 }
 
 export const Switcher: FC<SwitcherProps> = (props) => {
-    const { className } = props;
-    const [enabled, setEnabled] = useState(false);
+    const { className, initialEnabled } = props;
+    const [enabled, setEnabled] = useState(!initialEnabled);
 
     return (
         <Switch
