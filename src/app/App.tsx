@@ -4,9 +4,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 
-import './styles/index.scss';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-
 function App() {
     const { theme } = useTheme();
 

@@ -3,14 +3,17 @@
 @import "./themes/light";
 @import "./themes/dark";
 
+body {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
 .app {
     display: flex;
     position: relative;
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--primary-color);
     width: 100%;
     min-height: 100vh;
+    background: var(--bg-color);
 }
 
 .content-page {
