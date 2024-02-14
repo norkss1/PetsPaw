@@ -5,6 +5,7 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 
 import './styles/index.scss';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 
 function App() {
     const { theme } = useTheme();
@@ -14,6 +15,7 @@ function App() {
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
+                    <Button theme={ButtonTheme.THIRTY} square size={ButtonSize.L} />
                     <AppRouter />
                 </div>
             </Suspense>

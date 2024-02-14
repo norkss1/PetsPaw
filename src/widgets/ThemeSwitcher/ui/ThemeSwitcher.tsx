@@ -3,7 +3,7 @@ import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { Switcher } from 'shared/ui/Switcher/Switcher';
 import cls from './ThemeSwitcher.module.scss';
 
@@ -18,11 +18,14 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
 
     return (
         <Button
-            theme={ThemeButton.CLEAR}
+            size={ButtonSize.XL}
+            theme={ButtonTheme.CLEAR}
             className={classNames(cls.ThemeSwitcher, {}, [className])}
             onClick={toggleTheme}
         >
-            {isThemeLight ? <LightIcon /> : <DarkIcon />}
+            <div>
+                {isThemeLight ? <LightIcon /> : <DarkIcon />}
+            </div>
             <Switcher initialEnabled={isThemeLight} />
         </Button>
     );

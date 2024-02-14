@@ -1,44 +1,62 @@
 .Button {
     cursor: pointer;
-    margin-left: 10px;
-}
-
-.primary {
     padding: 0 30px;
     border: none;
     border-radius: 10px;
-    min-width: 143px;
     height: 40px;
-    font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.primary {
     background-color: var(--primary-bg-btn-color);
     color: var(--primary-btn-color);
 }
 
 .secondary {
-    padding: 0 30px;
-    border: none;
-    border-radius: 10px;
-    min-width: 143px;
-    height: 40px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     background-color: var(--primary-bg-btn-color);
     color: var(--primary-btn-color);
 }
 
 .thirty {
-    padding: 0 10px;
-    border: none;
-    border-radius: 10px;
-    min-width: 40px;
-    height: 40px;
     background-color: var(--secondary-bg-btn-color);
     color: var(--thirty-btn-color);
+}
+
+.size_s {
+    width: var(--font-line-s);
+    height: var(--font-line-s);
+    font-size: var(--font-s);
+}
+
+.size_m {
+    width: var(--font-line-m);
+    height: var(--font-line-m);
+    font-size: var(--font-m);
+}
+
+.size_l {
+    width: var(--font-line-l);
+    height: var(--font-line-l);
+    font-size: var(--font-l);
+}
+
+.square {
+    padding: 0;
+
+    &.size_l {
+        width: var(--font-line-l);
+        height: var(--font-line-l);
+        font-size: var(--font-l);
+    }
+
+    &.size_xl {
+        width: var(--font-line-xl);
+        height: var(--font-line-xl);
+        font-size: var(--font-xl);
+        border-radius: 20px;
+    }
 }
 
 .filled {

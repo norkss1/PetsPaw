@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import LangIcon from 'shared/assets/icons/lang.png';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { AppImage } from 'shared/ui/AppImage';
 import cls from './LangSwitcher.module.scss';
 
@@ -20,7 +20,8 @@ export const LangSwitcher = memo(({ className = '' }: LangSwitcherProps) => {
     return (
         <Button
             className={classNames(cls.LangSwitcher, {}, [className])}
-            theme={ThemeButton.CLEAR}
+            size={ButtonSize.M}
+            theme={ButtonTheme.CLEAR}
             onClick={toggle}
         >
             <AppImage
