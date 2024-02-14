@@ -42,9 +42,10 @@
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "config"
   ],
   "exclude": [
     "node_modules",
-    "reports"
+    "reports",
   ]
 }
