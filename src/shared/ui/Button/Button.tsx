@@ -5,7 +5,6 @@ import cls from './Button.module.scss';
 export enum ButtonTheme {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
-    THIRTY = 'thirty',
     CLEAR = 'clear'
 }
 
@@ -29,7 +28,7 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         theme,
         square,
-        size = ButtonSize.L,
+        size,
         ...otherProps
     } = props;
 

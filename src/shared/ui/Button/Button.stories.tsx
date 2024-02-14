@@ -17,60 +17,48 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Text',
+    children: 'example',
     theme: ButtonTheme.PRIMARY,
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-    children: 'Text',
+    children: 'example',
     theme: ButtonTheme.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-    children: 'Text',
+    children: 'example',
     theme: ButtonTheme.SECONDARY,
 };
 
 export const SecondaryDark = Template.bind({});
 SecondaryDark.args = {
-    children: 'Text',
+    children: 'example',
     theme: ButtonTheme.SECONDARY,
 };
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const Thirty = Template.bind({});
-Thirty.args = {
-    children: '+',
-    theme: ButtonTheme.THIRTY,
-};
-
-export const ThirtyDark = Template.bind({});
-ThirtyDark.args = {
-    children: '+',
-    theme: ButtonTheme.THIRTY,
-};
-ThirtyDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const Square = Template.bind({});
 Square.args = {
     children: '+',
-    theme: ButtonTheme.THIRTY,
+    theme: ButtonTheme.SECONDARY,
     square: true,
+    size: ButtonSize.L,
 };
 
 export const SquareSizeXL = Template.bind({});
 SquareSizeXL.args = {
     children: '+',
-    theme: ButtonTheme.THIRTY,
+    theme: ButtonTheme.SECONDARY,
     square: true,
     size: ButtonSize.XL,
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
-    children: 'Text',
+    children: 'example',
     theme: ButtonTheme.CLEAR,
 };

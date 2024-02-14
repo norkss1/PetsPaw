@@ -15,7 +15,6 @@ function App() {
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
-                    <Button theme={ButtonTheme.THIRTY} square size={ButtonSize.L} />
                     <AppRouter />
                 </div>
             </Suspense>
