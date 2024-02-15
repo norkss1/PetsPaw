@@ -9,16 +9,6 @@
     z-index: 100;
 }
 
-.Modal.light {
-    --modal-bg-color: #fff;
-    --primary-color: #1d1d1d;
-}
-
-.Modal.dark {
-    --modal-bg-color: #282828;
-    --primary-color: #fff;
-}
-
 .overlay {
     display: flex;
     justify-content: center;
