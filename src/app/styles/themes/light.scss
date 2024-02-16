@@ -1,7 +1,8 @@
 .app_light_theme {
     --bg-color: #f8f8f7;
     --inverted-bg-color: #fff;
-    --modal-bg-color: #fff;
+    --modal-bg-color: #f8f8f7;
+    --main-page-bg-color: #fbe0dc;
 
     // Text
     --primary-color: #1d1d1d;
@@ -10,10 +11,9 @@
     // Button
     --primary-bg-btn-color: #ff868e;
     --secondary-bg-btn-color: #fbe0dc;
+    --thirty-bg-btn-color: #fff;
     --primary-btn-color: #fff;
     --secondary-btn-color: #fbe0dc;
     --thirty-btn-color: #ff868e;
-    --primary-bg-link-color: #fff;
     --loader-color: #8c8c8c;
-    --indicator-color: #ff868e;
 }

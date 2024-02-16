@@ -7,6 +7,7 @@
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: 0.3s linear;
 }
 
 .primary {
@@ -17,24 +18,54 @@
 .secondary {
     background-color: var(--secondary-bg-btn-color);
     color: var(--thirty-btn-color);
+
+    &:hover {
+        background-color: var(--primary-bg-btn-color);
+        color: var(--primary-btn-color);
+
+        svg {
+            fill: var(--primary-btn-color);
+        }
+    }
+}
+
+.thirty {
+    background-color: var(--thirty-bg-btn-color);
+    color: var(--thirty-btn-color);
+}
+
+.forty {
+    background-color: var(--thirty-bg-btn-color);
+    color: var(--thirty-btn-color);
+
+    svg {
+        fill: var(--thirty-btn-color);
+    }
+
+    &:hover {
+        background-color: var(--primary-bg-btn-color);
+        color: var(--primary-btn-color);
+
+        svg {
+            fill: var(--primary-btn-color);
+        }
+    }
 }
 
 .size_s {
-    width: var(--font-line-s);
-    height: var(--font-line-s);
-    font-size: var(--font-s);
+    font-size: var(--font-size-s);
 }
 
 .size_m {
     width: var(--font-line-m);
     height: var(--font-line-m);
-    font-size: var(--font-m);
+    font-size: var(--font-size-m);
 }
 
 .size_l {
     width: var(--font-line-l);
     height: var(--font-line-l);
-    font-size: var(--font-l);
+    font-size: var(--font-size-l);
 }
 
 .square {

@@ -1,0 +1,25 @@
+.UploadWindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .uploadTitle {
+        margin-top: 100px;
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        line-height: var(--font-line-xl);
+    }
+
+    .uploadSubtitle {
+        margin-top: 20px;
+        font-size: var(--font-size-l);
+        line-height: var(--font-line-l);
+        color: var(--secondary-color);
+    }
+
+    .uploadLink {
+        color: var(--default-btn-text-color);
+        text-decoration: none;
+    }
+}

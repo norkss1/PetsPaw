@@ -1,0 +1,18 @@
+.MainPage {
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--main-page-bg-color);
+
+    .mainPageImage {
+        position: absolute;
+        min-width: 55%;
+        width: auto;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+
+        @media (min-width: 1440px) {
+            min-width: 45%;
+        }
+    }
+}

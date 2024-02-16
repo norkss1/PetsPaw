@@ -1,16 +1,24 @@
 {
+  "": "",
+  "UPLOAD": "UPLOAD",
   "about_page_title": "about_page_title",
+  "btn_upload": "btn_upload",
   "error_boundary": {
     "error_boundary_text": "error_boundary_text",
     "error_boundary_title": "error_boundary_title",
     "reload_page": "reload_page",
     "throw_error": "throw_error"
   },
+  "gallery_page_title": "gallery_page_title",
   "main_page_title": "main_page_title",
   "navbar": {
     "breeds": "breeds",
     "gallery": "gallery",
     "home": "home",
     "voting": "voting"
-  }
+  },
+  "upload": "upload",
+  "upload_btn": "upload_btn",
+  "upload_modal_btn": "upload_modal_btn",
+  "upload_title": "upload_title"
 }

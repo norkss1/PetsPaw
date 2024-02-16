@@ -4,6 +4,8 @@ import React, {
 import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import CloseModalIcon from 'shared/assets/icons/close-modal-btn.svg';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -71,6 +73,17 @@ export const Modal = (props: ModalProps) => {
                         className={cls.content}
                         onClick={onContentClick}
                     >
+                        <Button
+                            className={classNames(cls.closeModalBtn)}
+                            size={ButtonSize.L}
+                            theme={ButtonTheme.FORTY}
+                            onClick={closeHandler}
+                            square
+                        >
+                            <div className={classNames(cls.closeModalIcon)}>
+                                <CloseModalIcon />
+                            </div>
+                        </Button>
                         {children}
                     </div>
                 </div>

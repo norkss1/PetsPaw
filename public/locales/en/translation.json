@@ -1,6 +1,6 @@
 {
   "main_page_title": "MainPage",
-  "about_page_title": "AboutPage",
+  "gallery_page_title": "GalleryPage",
   "page_not_found": "Page not found",
   "error_boundary": {
     "error_boundary_title": "Oops. Something went wrong.",

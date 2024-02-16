@@ -1,9 +1,9 @@
 export enum AppRoutes {
   MAIN = 'main',
-  ABOUT = 'about',
+  GALLERY = 'gallery',
   NOT_FOUND = 'not_found',
 }
 
 export const getRouteMain = () => '/';
-export const getRouteAbout = () => '/about';
+export const getRouteGallery = () => '/gallery';
 export const getRouteNotFound = () => '*';
