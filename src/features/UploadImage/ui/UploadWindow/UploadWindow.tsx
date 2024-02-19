@@ -3,11 +3,11 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Text, TextSize } from 'shared/ui/Text';
 import cls from './UploadWindow.module.scss';
 
-interface UploadWindowProps {
+export interface UploadWindowProps {
     className?: string;
 }
 
-export const UploadWindow = (props: UploadWindowProps) => {
+const UploadWindow = (props: UploadWindowProps) => {
     const { className } = props;
     const { t } = useTranslation('upload-modal');
 
@@ -31,3 +31,5 @@ export const UploadWindow = (props: UploadWindowProps) => {
         </div>
     );
 };
+
+export default UploadWindow;

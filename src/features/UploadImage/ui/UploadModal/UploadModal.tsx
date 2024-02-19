@@ -1,6 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
-import { UploadWindow } from '../UploadWindow/UploadWindow';
+import { Suspense } from 'react';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { UploadWindowAsync } from '../UploadWindow/UploadWindow.async';
 import cls from './UploadModal.module.scss';
 
 interface UploadModalProps {
@@ -19,7 +21,10 @@ export const UploadModal = (props: UploadModalProps) => {
             onClose={onClose}
             lazy
         >
-            <UploadWindow />
+            <Suspense fallback={<Loader />}>
+                <UploadWindowAsync />
+            </Suspense>
+
         </Modal>
     );
 };
