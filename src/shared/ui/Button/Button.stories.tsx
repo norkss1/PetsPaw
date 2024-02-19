@@ -62,3 +62,10 @@ Clear.args = {
     children: 'example',
     theme: ButtonTheme.CLEAR,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'example',
+    theme: ButtonTheme.PRIMARY,
+    disabled: true,
+};

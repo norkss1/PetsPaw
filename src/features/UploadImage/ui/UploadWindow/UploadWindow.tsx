@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Trans, useTranslation } from 'react-i18next';
+import { Text, TextSize } from 'shared/ui/Text';
 import cls from './UploadWindow.module.scss';
 
 interface UploadWindowProps {
@@ -12,9 +13,10 @@ export const UploadWindow = (props: UploadWindowProps) => {
 
     return (
         <div className={classNames(cls.UploadWindow, {}, [className])}>
-            <h1 className={classNames(cls.uploadTitle)}>
-                {t('upload_title')}
-            </h1>
+            <div className={classNames(cls.uploadTitle)}>
+                <Text title={t('upload_title')} size={TextSize.L} />
+            </div>
+
             <p className={classNames(cls.uploadSubtitle)}>
                 <Trans
                     defaults=""
