@@ -3,6 +3,10 @@
 @import "./themes/light";
 @import "./themes/dark";
 
+#root {
+    width: 100%;
+}
+
 .app,
 .app_modal {
     font: var(--font-m);

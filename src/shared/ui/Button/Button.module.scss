@@ -72,13 +72,14 @@
         width: var(--btn-size-l);
         height: var(--btn-size-l);
         font-size: var(--font-l);
+        border-radius: 10px;
     }
 
     &.size_xl {
         width: var(--btn-size-xl);
         height: var(--btn-size-xl);
         font-size: var(--font-xl);
-        border-radius: 10px;
+        border-radius: 20px;
     }
 }
 

@@ -54,7 +54,7 @@ export const Input = memo((props: InputProps) => {
             />
             <div className={classNames(cls.searchIcon)}>
                 <Button
-                    size={ButtonSize.XL}
+                    size={ButtonSize.L}
                     theme={ButtonTheme.SECONDARY}
                     square
                 >

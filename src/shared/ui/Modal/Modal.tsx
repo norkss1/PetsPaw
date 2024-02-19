@@ -93,7 +93,7 @@ export const Modal = (props: ModalProps) => {
                     >
                         <Button
                             className={classNames(cls.closeModalBtn)}
-                            size={ButtonSize.XL}
+                            size={ButtonSize.L}
                             theme={ButtonTheme.FORTY}
                             onClick={closeHandler}
                             square

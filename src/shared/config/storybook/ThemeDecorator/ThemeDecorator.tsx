@@ -4,7 +4,7 @@ import ThemeProvider from 'app/providers/ThemeProvider/ui/ThemeProvider';
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     <ThemeProvider initialTheme={theme}>
-        <div className={`app ${theme}`}>
+        <div className={`app ${theme}`} style={{ justifyContent: 'center', alignItems: 'center' }}>
             <StoryComponent />
         </div>
     </ThemeProvider>

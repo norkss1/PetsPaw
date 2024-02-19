@@ -1,6 +1,7 @@
 .InputWrapper {
     position: relative;
     display: flex;
+    max-height: 60px;
 
     &:focus {
         outline: none;

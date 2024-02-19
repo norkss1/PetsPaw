@@ -17,6 +17,7 @@ export const UploadWindow = (props: UploadWindowProps) => {
             </h1>
             <p className={classNames(cls.uploadSubtitle)}>
                 <Trans
+                    defaults=""
                     t={t}
                     i18nKey="upload_subtitle"
                     components={{
