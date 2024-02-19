@@ -17,6 +17,7 @@ export const UploadModal = (props: UploadModalProps) => {
             className={classNames(cls.UploadModal, {}, [className])}
             isOpen={isOpen}
             onClose={onClose}
+            lazy
         >
             <UploadWindow />
         </Modal>

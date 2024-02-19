@@ -2,6 +2,7 @@
     cursor: pointer;
     padding: 0 30px;
     border: none;
+    outline: none;
     border-radius: 10px;
     height: 40px;
     font-weight: 500;
@@ -57,14 +58,10 @@
 }
 
 .size_m {
-    width: var(--font-line-m);
-    height: var(--font-line-m);
     font-size: var(--font-size-m);
 }
 
 .size_l {
-    width: var(--font-line-l);
-    height: var(--font-line-l);
     font-size: var(--font-size-l);
 }
 
@@ -72,16 +69,16 @@
     padding: 0;
 
     &.size_l {
-        width: var(--font-line-l);
-        height: var(--font-line-l);
+        width: var(--btn-size-l);
+        height: var(--btn-size-l);
         font-size: var(--font-l);
     }
 
     &.size_xl {
-        width: var(--font-line-xl);
-        height: var(--font-line-xl);
+        width: var(--btn-size-xl);
+        height: var(--btn-size-xl);
         font-size: var(--font-xl);
-        border-radius: 20px;
+        border-radius: 10px;
     }
 }
 

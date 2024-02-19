@@ -1,0 +1,53 @@
+.InputWrapper {
+    position: relative;
+    display: flex;
+
+    &:focus {
+        outline: none;
+    }
+
+    .input {
+        padding: 15px 60px 15px 20px;
+        width: 100%;
+        height: 60px;
+        border-radius: 20px;
+        border: none;
+        font-size: var(--font-size-l);
+        line-height: var(--font-line-l);
+        color: var(--primary-color);
+        background-color: var(--thirty-bg-btn-color);
+        outline: transparent none;
+        transition: 0.3s linear outline-color;
+
+        &:hover {
+            outline: 2px solid var(--hover-border-btn-color);
+        }
+
+        &:focus {
+            outline: 2px solid var(--active-border-btn-color);
+        }
+    }
+
+    .searchIcon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -50%);
+            fill: var(--default-btn-text-color);
+        }
+
+        &:hover {
+            svg {
+                fill: var(--primary-btn-color);
+            }
+        }
+    }
+}

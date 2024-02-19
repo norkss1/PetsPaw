@@ -10,6 +10,8 @@
     "throw_error": "throw_error"
   },
   "gallery_page_title": "gallery_page_title",
+  "input_default_value": "input_default_value",
+  "input_value": "input_value",
   "main_page_title": "main_page_title",
   "navbar": {
     "breeds": "breeds",
