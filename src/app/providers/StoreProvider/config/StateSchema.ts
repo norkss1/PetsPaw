@@ -6,9 +6,14 @@ import {
     Reducer,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
+import { AxiosInstance } from 'axios';
+import { rtkApi } from 'shared/api/rtkApi';
+import { AnimalSchema } from 'entities/Animal';
 
 export interface StateSchema {
     counter: CounterSchema;
+    animal: AnimalSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 }
 
 type OptionalRecord<K extends keyof any, T> = {
@@ -27,9 +32,18 @@ export interface ReducerManager {
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
     getMountedReducers: () => MountedReducers;
-
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
     reducerManager: ReducerManager;
+}
+
+export interface ThunkExtraArg {
+    api: AxiosInstance;
+}
+
+export interface ThunkConfig<T> {
+    rejectValue: T;
+    extra: ThunkExtraArg;
+    state: StateSchema;
 }
