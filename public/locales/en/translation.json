@@ -7,5 +7,6 @@
     "error_boundary_text": "Please, reload page.",
     "reload_page": "Reload page",
     "throw_error": "Throw error"
-  }
+  },
+  "input_default_value": "Search for breeds by name"
 }

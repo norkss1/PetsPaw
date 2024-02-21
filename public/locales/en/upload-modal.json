@@ -1,6 +1,4 @@
 {
   "upload_title": "Upload a .jpg or .png Dog Image",
-  "upload_subtitle": "Any uploads must comply with the <guideLink>upload guidelines</guideLink> or face deletion.",
-  "upload_modal_btn": "upload",
-  "input_default_value": "Search for breeds by name"
+  "upload_subtitle": "Any uploads must comply with the <guideLink>upload guidelines</guideLink> or face deletion."
 }

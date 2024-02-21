@@ -16,8 +16,6 @@
         padding: 30px 0;
         min-width: 446px;
         min-height: 554px;
-        width: 32vw;
-        height: 62vh;
 
         .switchers {
             display: flex;
@@ -25,11 +23,11 @@
             gap: 15px;
             position: absolute;
             top: 30px;
-            right: 20px;
+            right: 0;
         }
 
         .homeHeader {
-            margin-top: 100px;
+            margin-top: 120px;
         }
 
         .subtitle_home_page {
@@ -43,7 +41,6 @@
 
         .links {
             display: flex;
-            justify-content: center;
             align-items: center;
             gap: 16px;
             height: 244px;
