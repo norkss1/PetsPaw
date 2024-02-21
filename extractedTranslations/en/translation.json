@@ -19,6 +19,9 @@
     "home": "home",
     "voting": "voting"
   },
+  "start_using_title": "start_using_title",
+  "subtitle_home_page": "subtitle_home_page",
+  "title_home_page": "title_home_page",
   "upload": "upload",
   "upload_btn": "upload_btn",
   "upload_modal_btn": "upload_modal_btn",

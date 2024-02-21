@@ -10,8 +10,8 @@
     .container {
         position: relative;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
         margin: 0 auto;
         padding: 30px 0;
         min-width: 446px;
@@ -26,6 +26,19 @@
             position: absolute;
             top: 30px;
             right: 20px;
+        }
+
+        .homeHeader {
+            margin-top: 100px;
+        }
+
+        .subtitle_home_page {
+            margin-top: 20px;
+        }
+
+        .navbarHeader {
+            margin-top: 60px;
+            margin-bottom: 20px;
         }
 
         .links {

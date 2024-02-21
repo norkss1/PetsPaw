@@ -13,6 +13,8 @@ export default (env: BuildEnv) => {
 
     const mode = env.mode || 'development';
     const PORT = env.port || 3000;
+    const apiUrl = env.apiUrl || 'https://api.thecatapi.com/v1/';
+    const token = env.token || 'live_ZoRUMrexLxDWz3IvkhRyILgL9mqpizgVlsnXsOdl1cruf0p3WiA0Pka8l35da6qg';
 
     const isDev = mode === 'development';
 
@@ -21,6 +23,8 @@ export default (env: BuildEnv) => {
         paths,
         isDev,
         port: PORT,
+        apiUrl,
+        token,
     });
 
     return config;

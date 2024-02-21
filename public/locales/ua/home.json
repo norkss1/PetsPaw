@@ -1,7 +1,7 @@
 {
-  "title_home_page": "Привіт інтерн!",
+  "title_home_page": "Привіт стажер!",
   "subtitle_home_page": "Вітаю на тестуванні MSI 2021 з Front-end",
-  "start_using_title": "Давай почнемо використовувати The Dogs API",
+  "start_using_title": "Почнемо використовувати The Dogs API",
   "navbar": {
     "home": "home",
     "voting": "голосування",
