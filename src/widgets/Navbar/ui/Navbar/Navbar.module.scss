@@ -18,24 +18,22 @@
         min-height: 554px;
         width: 32vw;
         height: 62vh;
-    }
-}
 
-.switchers {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: absolute;
-    top: 30px;
-    right: 20px;
-}
+        .switchers {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+        }
 
-.links {
-    .link {
-        margin-right: 16px;
-    }
-
-    .link:last-child {
-        margin-left: 16px;
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            height: 244px;
+        }
     }
 }
