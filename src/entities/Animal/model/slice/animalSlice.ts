@@ -18,15 +18,21 @@ export const animalSlice = createSlice({
                 state.isLoading = true;
                 state.error = '';
             })
-            .addCase(fetchAnimalData.fulfilled, (state, action: PayloadAction<Animal[]>) => {
-                state.isLoading = false;
-                state.error = '';
-                state.animalData = action.payload;
-            })
-            .addCase(fetchAnimalData.rejected, (state, action: PayloadAction<string>) => {
-                state.isLoading = false;
-                state.error = action.payload;
-            });
+            .addCase(
+                fetchAnimalData.fulfilled,
+                (state, action: PayloadAction<Animal[]>) => {
+                    state.isLoading = false;
+                    state.error = '';
+                    state.animalData = action.payload;
+                },
+            )
+            .addCase(
+                fetchAnimalData.rejected,
+                (state, action) => {
+                    state.isLoading = false;
+                    state.error = action.payload;
+                },
+            );
     },
 });
 
