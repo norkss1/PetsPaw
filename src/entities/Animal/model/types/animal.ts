@@ -8,5 +8,5 @@ export interface Animal {
 export interface AnimalSchema {
     animalData?: Animal[];
     isLoading: boolean;
-    error: string;
+    error?: string;
 }

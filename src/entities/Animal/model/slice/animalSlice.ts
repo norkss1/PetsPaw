@@ -5,7 +5,7 @@ import { Animal, AnimalSchema } from '../types/animal';
 const initialState: AnimalSchema = {
     animalData: [],
     isLoading: false,
-    error: '',
+    error: undefined,
 };
 
 export const animalSlice = createSlice({
@@ -16,7 +16,7 @@ export const animalSlice = createSlice({
         builder
             .addCase(fetchAnimalData.pending, (state) => {
                 state.isLoading = true;
-                state.error = undefined;
+                state.error = '';
             })
             .addCase(fetchAnimalData.fulfilled, (state, action: PayloadAction<Animal[]>) => {
                 state.isLoading = false;

@@ -12,7 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof GalleryPage>;
 
-const Template: ComponentStory<typeof GalleryPage> = (args) => <GalleryPage {...args} />;
+const Template: ComponentStory<typeof GalleryPage> = () => <GalleryPage />;
 
 export const Light = Template.bind({});
 Light.args = {};
