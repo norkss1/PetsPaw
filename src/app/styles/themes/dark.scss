@@ -1,8 +1,10 @@
 .app_dark_theme {
     --bg-color: #1d1d1d;
-    --inverted-bg-color: #ffffff0c;
+    --inverted-bg-color: #282828;
+    --main-page-bg-color: #282828;
     --modal-bg-color: #282828;
-    --main-page-bg-color: #ffffff0c;
+    --select-bg-color-standard: #1d1d1d;
+    --select-bg-color-filled: #3d3c3c;
 
     // Text
     --primary-color: #fff;
@@ -10,14 +12,14 @@
 
     // Button
     --primary-bg-btn-color: #ff868e;
-    --secondary-bg-btn-color: #ff868e33;
-    --thirty-bg-btn-color: #ffffff0c;
+    --secondary-bg-btn-color: #533b3c;
+    --thirty-bg-btn-color: #282828;
     --primary-btn-color: #fff;
     --secondary-btn-color: #fbe0dc;
     --thirty-btn-color: #ff868e;
     --loader-color: #fff;
 
     // Border
-    --hover-border-btn-color: #ff868e33;
+    --hover-border-btn-color: #533b3c;
     --active-border-btn-color: #ff868e;
 }

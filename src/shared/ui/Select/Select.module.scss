@@ -1,0 +1,103 @@
+.Wrapper {
+    display: inline-block;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 200px;
+
+    .label {
+        position: absolute;
+        top: -22px;
+        left: 8px;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+    }
+
+    .selectIcon {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        transform: translateY(-45%);
+        pointer-events: none;
+    }
+
+    .select {
+        text-align: start;
+        padding: 8px 30px 8px 10px;
+        width: 100%;
+        min-width: 226px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        outline: none;
+        transition: 0.3s linear border-color;
+        cursor: pointer;
+
+        &:hover {
+            border: 2px solid var(--hover-border-btn-color);
+        }
+
+        &:focus {
+            border: 2px solid transparent;
+        }
+    }
+
+    .optionsList {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        border-radius: 30px;
+        background-color: var(--inverted-bg-color);
+        overflow: hidden;
+        z-index: var(--overlay-z-index);
+    }
+
+    .optionsListVisible {
+        display: block;
+    }
+
+    .option {
+        width: 300px;
+        border: transparent;
+        font-size: var(--font-size-m);
+        margin: 0;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: 0.3s linear background-color;
+        color: var(--secondary-color);
+        background: var(--select-bg-color-filled);
+    }
+
+    .option:first-child {
+        padding-top: 20px;
+    }
+
+    .option:last-child {
+        padding-bottom: 20px;
+    }
+
+    .option:hover {
+        background-color: var(--secondary-bg-btn-color);
+    }
+}
+
+.standard {
+    .select {
+        color: var(--primary-color);
+        background-color: var(--select-bg-color-standard);
+    }
+}
+
+.filled {
+    .select {
+        color: var(--secondary-color);
+        background-color: var(--select-bg-color-filled);
+    }
+}

@@ -1,10 +1,14 @@
 import React, {
     MutableRefObject,
-    ReactNode, useCallback, useEffect, useRef, useState,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import CloseModalIcon from 'shared/assets/icons/close-modal-btn.svg';
 import cls from './Modal.module.scss';
@@ -75,7 +79,7 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpening,
         [cls.isClosing]: isClosing,
     };
