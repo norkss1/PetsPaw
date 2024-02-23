@@ -16,10 +16,11 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 export const StandardLight = Template.bind({});
 StandardLight.args = {
-    value: 'none',
+    label: 'order',
+    value: 'None',
     theme: SelectTheme.STANDARD,
     options: [
-        { value: '0', content: 'none' },
+        { value: '0', content: 'None' },
         { value: '1', content: 'Affenpinscher' },
         { value: '2', content: 'Afghan Hound' },
         { value: '3', content: 'African Hunting Dog' },
@@ -28,20 +29,20 @@ StandardLight.args = {
 
 export const StandardDark = Template.bind({});
 StandardDark.args = {
-    value: 'none',
+    label: 'order',
+    value: 'None',
     theme: SelectTheme.STANDARD,
     options: [
-        { value: '0', content: 'none' },
+        { value: '0', content: 'None' },
         { value: '1', content: 'Affenpinscher' },
         { value: '2', content: 'Afghan Hound' },
         { value: '3', content: 'African Hunting Dog' },
     ],
 };
-StandardDark.decorators = [ThemeDecorator(Theme.DARK)];
+StandardDark.decorators = [ThemeDecorator(Theme.STORYBOOK_BLACK)];
 
 export const FilledLight = Template.bind({});
 FilledLight.args = {
-    label: 'order',
     value: 'All breeds',
     theme: SelectTheme.FILLED,
     options: [
@@ -51,10 +52,10 @@ FilledLight.args = {
         { value: '3', content: 'African Hunting Dog' },
     ],
 };
+FilledLight.decorators = [ThemeDecorator(Theme.STORYBOOK_WHITE)];
 
 export const FilledDark = Template.bind({});
 FilledDark.args = {
-    label: 'order',
     value: 'All breeds',
     theme: SelectTheme.FILLED,
     options: [

@@ -10,6 +10,7 @@ export default {
         __IS_DEV__: true,
         __API__: '',
         __TOKEN__: '',
+        __PROJECT__: 'jest',
     },
     clearMocks: true,
     testEnvironment: 'jsdom',

@@ -72,7 +72,7 @@
         cursor: pointer;
         transition: 0.3s linear background-color;
         color: var(--secondary-color);
-        background: var(--select-bg-color-filled);
+        background: var(--option-bg-color);
     }
 
     .option:first-child {
