@@ -10,6 +10,6 @@ export enum AppRoutes {
 export const getRouteMain = () => '/';
 export const getRouteVoting = () => '/voting';
 export const getRouteBreeds = () => '/breeds';
-export const getRouteBreedInfo = () => '/breeds/info';
+export const getRouteBreedInfo = (breedId: string) => `/breeds/${breedId}`;
 export const getRouteGallery = () => '/gallery';
 export const getRouteNotFound = () => '*';

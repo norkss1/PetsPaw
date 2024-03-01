@@ -1,8 +1,6 @@
 .Wrapper {
     display: inline-block;
     position: relative;
-    margin-top: 50px;
-    margin-left: 200px;
 
     .label {
         position: absolute;
@@ -24,9 +22,8 @@
 
     .select {
         text-align: start;
-        padding: 8px 30px 8px 10px;
+        padding: 8px 35px 8px 10px;
         width: 100%;
-        min-width: 226px;
         height: 40px;
         border-radius: 10px;
         border: 2px solid transparent;

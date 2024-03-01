@@ -9,6 +9,7 @@
     "reload_page": "reload_page",
     "throw_error": "throw_error"
   },
+  "fetch_error": "fetch_error",
   "gallery_page_title": "gallery_page_title",
   "input_default_value": "input_default_value",
   "input_value": "input_value",
@@ -19,6 +20,7 @@
     "home": "home",
     "voting": "voting"
   },
+  "page_name": "page_name",
   "start_using_title": "start_using_title",
   "subtitle_home_page": "subtitle_home_page",
   "title_home_page": "title_home_page",

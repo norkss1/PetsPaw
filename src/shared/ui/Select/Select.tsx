@@ -11,15 +11,15 @@ export enum SelectTheme {
 }
 
 export interface SelectOption {
-    value: string;
+    value: number;
     content: string;
 }
 
 interface SelectProps {
     className?: string;
     theme?: SelectTheme;
-    value?: string;
-    setValue?: (elemValue: string) => void;
+    value?: SelectOption;
+    setValue?: (elemValue: SelectOption) => void;
     label?: string;
     options?: SelectOption[];
 }
@@ -54,7 +54,7 @@ export const Select = memo((props: SelectProps) => {
         }
     }, [setOptionsIsVisible]);
 
-    const onChange = useCallback((elemValue: string) => {
+    const onChange = useCallback((elemValue: SelectOption) => {
         setValue?.(elemValue);
         setOptionsIsVisible(false);
     }, [setValue]);
@@ -84,7 +84,7 @@ export const Select = memo((props: SelectProps) => {
             <div
                 className={cls.option}
                 key={elem.value}
-                onClick={() => onChange(elem.content)}
+                onClick={() => onChange(elem)}
             >
                 {elem.content}
             </div>
@@ -107,10 +107,10 @@ export const Select = memo((props: SelectProps) => {
                 type="button"
                 ref={selectBtnRef}
                 className={cls.select}
-                value={value}
+                value={value?.content}
                 onClick={openSelectHandler}
             >
-                {value}
+                {value?.content}
             </button>
             <div className={classNames(cls.optionsList, modsOptionsList, [className])}>
                 {optionsList}

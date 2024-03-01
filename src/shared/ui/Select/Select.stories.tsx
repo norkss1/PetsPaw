@@ -17,52 +17,52 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 export const StandardLight = Template.bind({});
 StandardLight.args = {
     label: 'order',
-    value: 'None',
+    value: { value: 0, content: 'None' },
     theme: SelectTheme.STANDARD,
     options: [
-        { value: '0', content: 'None' },
-        { value: '1', content: 'Affenpinscher' },
-        { value: '2', content: 'Afghan Hound' },
-        { value: '3', content: 'African Hunting Dog' },
+        { value: 0, content: 'None' },
+        { value: 1, content: 'Affenpinscher' },
+        { value: 2, content: 'Afghan Hound' },
+        { value: 3, content: 'African Hunting Dog' },
     ],
 };
 
 export const StandardDark = Template.bind({});
 StandardDark.args = {
     label: 'order',
-    value: 'None',
+    value: { value: 0, content: 'None' },
     theme: SelectTheme.STANDARD,
     options: [
-        { value: '0', content: 'None' },
-        { value: '1', content: 'Affenpinscher' },
-        { value: '2', content: 'Afghan Hound' },
-        { value: '3', content: 'African Hunting Dog' },
+        { value: 0, content: 'None' },
+        { value: 1, content: 'Affenpinscher' },
+        { value: 2, content: 'Afghan Hound' },
+        { value: 3, content: 'African Hunting Dog' },
     ],
 };
 StandardDark.decorators = [ThemeDecorator(Theme.STORYBOOK_BLACK)];
 
 export const FilledLight = Template.bind({});
 FilledLight.args = {
-    value: 'All breeds',
+    value: { value: 0, content: 'All breeds' },
     theme: SelectTheme.FILLED,
     options: [
-        { value: '0', content: 'All breeds' },
-        { value: '1', content: 'Affenpinscher' },
-        { value: '2', content: 'Afghan Hound' },
-        { value: '3', content: 'African Hunting Dog' },
+        { value: 0, content: 'All breeds' },
+        { value: 1, content: 'Affenpinscher' },
+        { value: 2, content: 'Afghan Hound' },
+        { value: 3, content: 'African Hunting Dog' },
     ],
 };
 FilledLight.decorators = [ThemeDecorator(Theme.STORYBOOK_WHITE)];
 
 export const FilledDark = Template.bind({});
 FilledDark.args = {
-    value: 'All breeds',
+    value: { value: 0, content: 'All breeds' },
     theme: SelectTheme.FILLED,
     options: [
-        { value: '0', content: 'All breeds' },
-        { value: '1', content: 'Affenpinscher' },
-        { value: '2', content: 'Afghan Hound' },
-        { value: '3', content: 'African Hunting Dog' },
+        { value: 0, content: 'All breeds' },
+        { value: 1, content: 'Affenpinscher' },
+        { value: 2, content: 'Afghan Hound' },
+        { value: 3, content: 'African Hunting Dog' },
     ],
 };
 FilledDark.decorators = [ThemeDecorator(Theme.DARK)];

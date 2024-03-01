@@ -1,0 +1,14 @@
+.BackButton {
+    svg {
+        fill: var(--default-btn-text-color);
+        width: 20px;
+        height: 20px;
+        transform: translate(-5%, 10%);
+    }
+
+    &:hover {
+        svg {
+            fill: var(--primary-btn-color);
+        }
+    }
+}

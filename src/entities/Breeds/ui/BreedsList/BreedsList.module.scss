@@ -1,0 +1,53 @@
+.BreedsList {
+    width: 100%;
+    padding-bottom: 200px;
+
+    .gridContainer {
+        display: grid;
+        padding: 0 20px;
+        margin-bottom: 20px;
+        gap: 20px;
+        height: 460px;
+        grid-template-areas:
+            "A A A A   B B B B   C C C C"
+            "A A A A   D D D D   D D D D"
+            "E E E E   D D D D   D D D D";
+
+        .item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .item1 {
+            grid-area: A;
+            overflow: hidden;
+        }
+
+        .item2 {
+            grid-area: B;
+            overflow: hidden;
+        }
+
+        .item3 {
+            grid-area: C;
+            overflow: hidden;
+        }
+
+        .item4 {
+            grid-area: D;
+            overflow: hidden;
+        }
+
+        .item5 {
+            grid-area: E;
+            overflow: hidden;
+        }
+    }
+
+    .reverse {
+        grid-template-areas:
+            "C C C C   B B B B   A A A A"
+            "D D D D   D D D D   A A A A"
+            "D D D D   D D D D   E E E E";
+    }
+}

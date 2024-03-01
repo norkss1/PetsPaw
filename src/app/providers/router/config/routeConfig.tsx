@@ -29,7 +29,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         element: <BreedsPage />,
     },
     [AppRoutes.BREED_INFO]: {
-        path: getRouteBreedInfo(),
+        path: getRouteBreedInfo(':breed_id'),
         element: <BreedInfoPage />,
     },
     [AppRoutes.GALLERY]: {

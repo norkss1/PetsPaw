@@ -9,11 +9,15 @@ import {
 import { AxiosInstance } from 'axios';
 import { rtkApi } from 'shared/api/rtkApi';
 import { AnimalSchema } from 'entities/Animal';
+import { BreedsListSchema } from 'entities/Breeds';
 
 export interface StateSchema {
     counter: CounterSchema;
     animal: AnimalSchema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
+
+    // Async reducers
+    breedsList?: BreedsListSchema;
 }
 
 type OptionalRecord<K extends keyof any, T> = {
