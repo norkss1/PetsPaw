@@ -11,6 +11,7 @@ export enum TextAlign {
     RIGHT = 'right',
     LEFT = 'left',
     CENTER = 'center',
+    JUSTIFY = 'justify',
 }
 
 export enum TextSize {
@@ -20,6 +21,12 @@ export enum TextSize {
     XL = 'size_xl',
 }
 
+export enum TextWeight {
+    REGULAR = 'regular',
+    MEDIUM = 'medium',
+    BOLD = 'BOLD',
+}
+
 interface TextProps {
     className?: string;
     title?: string;
@@ -27,6 +34,7 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+    weight?: TextWeight;
 
     'data-testid'?: string;
 }
@@ -48,6 +56,7 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
+        weight = TextWeight.REGULAR,
         'data-testid': dataTestId = 'Text',
     } = props;
 
@@ -57,6 +66,7 @@ export const Text = memo((props: TextProps) => {
         [cls[theme]]: true,
         [cls[align]]: true,
         [cls[size]]: true,
+        [cls[weight]]: true,
     };
 
     return (

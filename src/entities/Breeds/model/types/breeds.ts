@@ -16,7 +16,7 @@ export interface IBreedItem {
     life_span: string,
     indoor: number,
     lap: number,
-    alt_names: '',
+    alt_names: string,
     adaptability: number,
     affection_level: number,
     child_friendly: number,
@@ -45,6 +45,12 @@ export interface IBreedItem {
         height: number,
         url: string
     }
+}
+
+export interface BreedInfoSchema {
+    isLoading: boolean;
+    error?: string;
+    breedInfoData?: IBreedItem;
 }
 
 export interface BreedsListSchema {

@@ -10,6 +10,7 @@ import { AxiosInstance } from 'axios';
 import { rtkApi } from 'shared/api/rtkApi';
 import { AnimalSchema } from 'entities/Animal';
 import { BreedsListSchema } from 'entities/Breeds';
+import { BreedInfoSchema } from 'entities/Breeds/model/types/breeds';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -18,6 +19,7 @@ export interface StateSchema {
 
     // Async reducers
     breedsList?: BreedsListSchema;
+    breedInfo?: BreedInfoSchema;
 }
 
 type OptionalRecord<K extends keyof any, T> = {

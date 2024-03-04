@@ -2,14 +2,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { IBreedItem } from '../../types/breeds';
 
-export const fetchBreedsList = createAsyncThunk<IBreedItem[], number | undefined, ThunkConfig<string>>(
-    'breedsList/fetchBreedsList',
-    async (limit, thunkApi) => {
+export const fetchBreedInfoById = createAsyncThunk<IBreedItem, string | undefined, ThunkConfig<string>>(
+    'breedInfo/fetchBreedInfoById',
+    async (breedId, thunkApi) => {
         const { rejectWithValue, extra } = thunkApi;
 
         try {
-            const response = await extra.api.get<IBreedItem[]>(
-                'breeds',
+            if (!breedId) {
+                throw new Error();
+            }
+
+            const response = await extra.api.get<IBreedItem>(
+                `/breeds/${breedId}`,
             );
 
             if (!response.data) {

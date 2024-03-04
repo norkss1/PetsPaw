@@ -1,4 +1,9 @@
 {
   "page_name": "breeds",
-  "fetch_error": "Was an error loading images"
+  "temperament_block": "Temperament:",
+  "weight_block": "Weight:",
+  "life_span_block": "Life span:",
+  "origin_block": "Origin:",
+  "fetch_error": "Was an error loading images",
+  "no_image_text": "Image was not loaded"
 }

@@ -13,6 +13,7 @@
   "gallery_page_title": "gallery_page_title",
   "input_default_value": "input_default_value",
   "input_value": "input_value",
+  "life_span_block": "life_span_block",
   "main_page_title": "main_page_title",
   "navbar": {
     "breeds": "breeds",
@@ -20,13 +21,18 @@
     "home": "home",
     "voting": "voting"
   },
+  "no-image-text": "no-image-text",
+  "no_image_text": "no_image_text",
+  "origin_block": "origin_block",
   "page_name": "page_name",
   "start_using_title": "start_using_title",
   "subtitle_home_page": "subtitle_home_page",
+  "temperament_block": "temperament_block",
   "title_home_page": "title_home_page",
   "upload": "upload",
   "upload_btn": "upload_btn",
   "upload_modal_btn": "upload_modal_btn",
   "upload_subtitle": "",
-  "upload_title": "upload_title"
+  "upload_title": "upload_title",
+  "weight_block": "weight_block"
 }

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { BreedsList } from 'entities/Breeds';
@@ -6,6 +6,8 @@ import { useScroll } from 'shared/lib/hooks/useScroll/useScroll';
 import { Select, SelectTheme } from 'shared/ui/Select/Select';
 import { BackButton } from 'shared/ui/BackButton';
 import { BadgeInfo } from 'shared/ui/BadgeInfo/BadgeInfo';
+import { fetchBreedsList } from 'entities/Breeds/model/services/fetchBreedsList/fetchBreedsList';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './BreedsPage.module.scss';
 
 interface BreedsPageProps {
@@ -14,7 +16,9 @@ interface BreedsPageProps {
 
 const BreedsPage = (props: BreedsPageProps) => {
     const { className } = props;
+    const dispatch = useAppDispatch();
     const { t } = useTranslation('breeds');
+
     const contentPageRef = useRef<HTMLDivElement>(null);
     const { scrollPosition, handleScroll } = useScroll({ ref: contentPageRef });
     const [limitValue, setLimitValue] = useState({ value: 10, content: 'Limit: 10' });
@@ -22,6 +26,12 @@ const BreedsPage = (props: BreedsPageProps) => {
     const mods: Mods = {
         [cls.unlimitedScreenContent]: scrollPosition <= 85 && limitValue.value > 5,
     };
+
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchBreedsList());
+        }
+    }, [dispatch]);
 
     return (
         <div className={classNames(cls.BreedsPage, {}, [className])}>
@@ -42,6 +52,8 @@ const BreedsPage = (props: BreedsPageProps) => {
                             { value: 10, content: 'Limit: 10' },
                             { value: 15, content: 'Limit: 15' },
                             { value: 20, content: 'Limit: 20' },
+                            { value: 20, content: 'Limit: 40' },
+                            { value: 20, content: 'Limit: 60' },
                         ]}
                     />
                 </div>
