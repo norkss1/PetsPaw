@@ -1,0 +1,20 @@
+.VotingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    gap: 10px;
+    width: 100%;
+    height: var(--content-page-height);
+    overflow-y: auto;
+    border-radius: 20px;
+    background-color: var(--inverted-bg-color);
+
+    .votingPageHeader {
+        display: flex;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+
+    &::-webkit-scrollbar { width: 0; }
+}

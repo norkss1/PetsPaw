@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { BreedsList } from 'entities/Breeds';
@@ -8,6 +8,7 @@ import { BackButton } from 'shared/ui/BackButton';
 import { BadgeInfo } from 'shared/ui/BadgeInfo/BadgeInfo';
 import { fetchBreedsList } from 'entities/Breeds/model/services/fetchBreedsList/fetchBreedsList';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './BreedsPage.module.scss';
 
 interface BreedsPageProps {
@@ -27,11 +28,9 @@ const BreedsPage = (props: BreedsPageProps) => {
         [cls.unlimitedScreenContent]: scrollPosition <= 85 && limitValue.value > 5,
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchBreedsList());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchBreedsList());
+    });
 
     return (
         <div className={classNames(cls.BreedsPage, {}, [className])}>

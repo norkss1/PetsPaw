@@ -1,11 +1,11 @@
 import {
     configureStore, ReducersMapObject, Reducer, CombinedState,
 } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { rtkApi } from 'shared/api/rtkApi';
 import { $api } from 'shared/api/api';
-import { animalReducer } from 'entities/Animal';
+import { votingActionsReducer } from 'pages/VotingPage';
+import { votingAnimalReducer } from 'entities/Voting';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -14,8 +14,9 @@ export function createReduxStore(
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
-        counter: counterReducer,
-        animal: animalReducer,
+        // counter: counterReducer,
+        votingAnimal: votingAnimalReducer,
+        votingActions: votingActionsReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
     };
 

@@ -4,8 +4,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { BreedInfo } from 'entities/Breeds';
-import { breedInfoReducer } from '../../../entities/Breeds/model/slice/breedInfoSlice';
+import { BreedInfo, breedInfoReducer } from 'entities/Breeds';
 
 const reducers: ReducersList = {
     breedInfo: breedInfoReducer,

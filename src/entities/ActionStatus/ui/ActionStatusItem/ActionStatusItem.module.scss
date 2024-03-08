@@ -1,0 +1,46 @@
+.ActionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 15px 20px 15px 15px;
+    width: 100%;
+    min-height: 60px;
+    border-radius: 10px;
+    background-color: var(--select-bg-color-filled);
+
+    .actionInfo {
+        display: flex;
+        align-items: center;
+
+        .actionDate {
+            padding: 6px 10px;
+            font-size: var(--font-size-m);
+            font-weight: 400;
+            border-radius: 5px;
+            color: var(--primary-color);
+            background-color: var(--select-bg-color-standard);
+        }
+
+        .actionText {
+            margin-left: 20px;
+            font-size: var(--font-size-m);
+            font-weight: 400;
+            color: var(--secondary-color);
+
+            span {
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .actionIcon {
+        width: 20px;
+        height: 20px;
+
+        svg {
+            fill: var(--pink-color-dark);
+        }
+    }
+}

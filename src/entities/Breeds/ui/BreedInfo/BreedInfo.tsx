@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useTranslation } from 'react-i18next';
 import { IBreedItem } from 'entities/Breeds';
 import { getBreedInfoData } from 'entities/Breeds/model/selectors/breedInfo';
 import { getBreedsListData } from 'entities/Breeds/model/selectors/breedsList';
+import {
+    fetchBreedInfoById,
+} from 'entities/Breeds/model/services/fetchBreedInfoById/fetchBreedInfoById';
+import { BreedInfoBlock } from 'entities/Breeds/ui/BreedInfo/BreedInfoBlock';
 import { getItemById } from 'pages/BreedInfoPage/lib/helpers/getItemById';
 import { getRouteBreeds } from 'shared/const/router';
 import { AppImage } from 'shared/ui/AppImage';
@@ -13,12 +18,8 @@ import {
 } from 'shared/ui/Text';
 import { BadgeInfo, BadgeInfoTheme } from 'shared/ui/BadgeInfo/BadgeInfo';
 import { BackButton } from 'shared/ui/BackButton';
-import { classNames } from 'shared/lib/classNames/classNames';
-import {
-    fetchBreedInfoById,
-} from 'entities/Breeds/model/services/fetchBreedInfoById/fetchBreedInfoById';
 import { BREED_ITEM_IMAGE_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-import { BreedInfoBlock } from 'entities/Breeds/ui/BreedInfo/BreedInfoBlock';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './BreedInfo.module.scss';
 
 interface BreedInfoProps {
@@ -36,11 +37,11 @@ export const BreedInfo = (props: BreedInfoProps) => {
     const [breedItem, setBreedItem] = useState<IBreedItem>();
     const [breedItemImageUrl, setBreedItemImageUrl] = useState('');
 
-    useEffect(() => {
-        if (breedsListData === undefined && __PROJECT__ !== 'storybook') {
+    useInitialEffect(() => {
+        if (breedsListData === undefined) {
             dispatch(fetchBreedInfoById(id));
         }
-    }, [breedsListData, dispatch, id]);
+    });
 
     useEffect(() => {
         if (breedsListData) {
@@ -72,7 +73,7 @@ export const BreedInfo = (props: BreedInfoProps) => {
 
                 <div className={classNames(cls.pageContent)}>
                     <div className={classNames(cls.imgWrapper)}>
-                        {breedItem?.image && (
+                        {(breedItem?.image || breedItemImageUrl) && (
                             <AppImage
                                 src={breedItem?.image?.url ? breedItem.image.url : breedItemImageUrl}
                                 className={cls.breedItemImg}

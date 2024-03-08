@@ -1,4 +1,3 @@
-import { CounterSchema } from 'entities/Counter';
 import {
     AnyAction,
     CombinedState,
@@ -8,13 +7,15 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { rtkApi } from 'shared/api/rtkApi';
-import { AnimalSchema } from 'entities/Animal';
 import { BreedsListSchema } from 'entities/Breeds';
 import { BreedInfoSchema } from 'entities/Breeds/model/types/breeds';
+import { VotingActionsSchema } from 'pages/VotingPage/model/types/votingActionsSchema';
+import { VotingAnimalSchema } from 'entities/Voting/model/types/voting';
 
 export interface StateSchema {
-    counter: CounterSchema;
-    animal: AnimalSchema;
+    // counter: CounterSchema;
+    votingAnimal: VotingAnimalSchema;
+    votingActions: VotingActionsSchema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers

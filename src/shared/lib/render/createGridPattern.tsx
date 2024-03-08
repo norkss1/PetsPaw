@@ -39,7 +39,7 @@ export const createGridPattern = (props: createGridPatternProps, ItemComponent: 
 
             return gridContainerList.map((item, index) => {
                 const isMods = !((index + 1) % 2) ? mods : {};
-                const keyValue = `key-${index}`;
+                const keyValue = `key-load-${index}`;
 
                 return (
                     <div key={keyValue} className={classNames(cls.gridContainer, isMods)}>
@@ -63,7 +63,7 @@ export const createGridPattern = (props: createGridPatternProps, ItemComponent: 
 
         return imagesList.map((items, index) => {
             const isMods = !((index + 1) % 2) ? mods : {};
-            const keyValue = `key-${index}`;
+            const keyValue = `key-image-${index}`;
 
             return (
                 <div key={keyValue} className={classNames(cls.gridContainer, isMods)}>

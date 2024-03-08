@@ -1,0 +1,4 @@
+{
+  "page_name": "voting",
+  "action_text": "Image ID: <idComponent>{{id}}</idComponent> was added to {{action }}"
+}

@@ -1,5 +1,5 @@
 .MainPage {
-    height: 100%;
+    height: calc(100vh - 60px);
     border-radius: 20px;
     background-color: var(--main-page-bg-color);
 

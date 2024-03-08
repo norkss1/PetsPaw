@@ -5,3 +5,5 @@ export { BreedInfo } from './ui/BreedInfo/BreedInfo';
 export type {
     IBreedItem, BreedInfoSchema, BreedsListSchema,
 } from './model/types/breeds';
+
+export { breedInfoReducer, breedInfoActions } from './model/slice/breedInfoSlice';
