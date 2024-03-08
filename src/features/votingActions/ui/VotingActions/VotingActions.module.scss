@@ -1,0 +1,67 @@
+.VotingActions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    border-radius: 20px;
+    border: 4px solid var(--inverted-bg-color);
+    background-color: var(--inverted-bg-color);
+    overflow: hidden;
+    transform: translateX(-50%);
+
+    .action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        transition: 0.3s linear background-color;
+        cursor: pointer;
+
+        svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--white-color);
+        }
+
+        &.like {
+            background-color: var(--green-color);
+        }
+
+        &.dislike {
+            background-color: var(--yellow-color);
+        }
+
+        &.favorite {
+            background-color: var(--pink-color-dark);
+        }
+
+        &:hover {
+            &.like {
+                background-color: var(--green-color-opacity);
+
+                svg {
+                    fill: var(--green-color);
+                }
+            }
+
+            &.dislike {
+                background-color: var(--yellow-color-opacity);
+
+                svg {
+                    fill: var(--yellow-color);
+                }
+            }
+
+            &.favorite {
+                background-color: var(--pink-color-opacity);
+
+                svg {
+                    fill: var(--pink-color-dark);
+                }
+            }
+        }
+    }
+}

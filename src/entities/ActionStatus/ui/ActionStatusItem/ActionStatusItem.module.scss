@@ -40,7 +40,26 @@
         height: 20px;
 
         svg {
-            fill: var(--pink-color-dark);
+            width: 100%;
+            height: 100%;
+        }
+
+        &.like {
+            svg {
+                fill: var(--green-color);
+            }
+        }
+
+        &.dislike {
+            svg {
+                fill: var(--yellow-color);
+            }
+        }
+
+        &.favorite {
+            svg {
+                fill: var(--pink-color-dark);
+            }
         }
     }
 }

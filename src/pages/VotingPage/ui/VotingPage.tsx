@@ -9,6 +9,10 @@ import {
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VotingAnimal, votingAnimalReducer } from 'entities/Voting';
+import { useSelector } from 'react-redux';
+import {
+    getVotingActions,
+} from 'features/votingActions/model/selectors/getVotingActions/getVotingActions';
 import cls from './VotingPage.module.scss';
 
 interface VotingPageProps {
@@ -23,6 +27,8 @@ const VotingPage = (props: VotingPageProps) => {
     const { className } = props;
     const { t } = useTranslation('voting');
 
+    const votingActions = useSelector(getVotingActions);
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <div className={classNames(cls.VotingPage, {}, [className])}>
@@ -34,23 +40,7 @@ const VotingPage = (props: VotingPageProps) => {
                 <VotingAnimal />
 
                 <ActionStatusList
-                    actions={[
-                        {
-                            id: 'asys',
-                            time: '22:35',
-                            action: 'like',
-                        },
-                        {
-                            id: 'acod',
-                            time: '21:22',
-                            action: 'favorite',
-                        },
-                        {
-                            id: 'fsde',
-                            time: '19:12',
-                            action: 'dislike',
-                        },
-                    ]}
+                    actions={votingActions.actions}
                 />
             </div>
         </DynamicModuleLoader>

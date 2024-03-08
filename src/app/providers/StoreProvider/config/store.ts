@@ -4,8 +4,8 @@ import {
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { rtkApi } from 'shared/api/rtkApi';
 import { $api } from 'shared/api/api';
-import { votingActionsReducer } from 'pages/VotingPage';
 import { votingAnimalReducer } from 'entities/Voting';
+import { votingActionsReducer } from 'features/votingActions';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(

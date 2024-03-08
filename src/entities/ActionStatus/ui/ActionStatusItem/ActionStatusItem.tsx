@@ -1,9 +1,7 @@
 import { memo } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import FavoriteIcon from 'shared/assets/icons/favorite-icon.svg';
-import LikeIcon from 'shared/assets/icons/like-icon.svg';
-import DislikeIcon from 'shared/assets/icons/dislike-icon.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { mapStatusToAction } from 'shared/lib/render/mapStatusToAction';
 import { IActionStatus } from '../../model/types/actionStatus';
 import cls from './ActionStatusItem.module.scss';
 
@@ -12,37 +10,20 @@ interface ActionStatusItemProps {
     action: IActionStatus;
 }
 
-export enum ActionStatus {
-    LIKE = 'like',
-    DISLIKE = 'dislike',
-    FAVORITE = 'favorite',
-}
-
 export const ActionStatusItem = memo((props: ActionStatusItemProps) => {
     const { className, action } = props;
     const { t } = useTranslation('voting');
 
     const actionsStatusText = `${action.action.charAt(0).toUpperCase() + action.action.slice(1)}s`;
 
-    const mapStatusToAction = (status: string) => {
-        switch (status) {
-        case ActionStatus.LIKE:
-            return <LikeIcon />;
-
-        case ActionStatus.DISLIKE:
-            return <DislikeIcon />;
-
-        case ActionStatus.FAVORITE:
-            return <FavoriteIcon />;
-
-        default: return null;
-        }
+    const modsWithStatus: Mods = {
+        [cls[action.action]]: true,
     };
 
     return (
         <div className={classNames(cls.ActionItem, {}, [className])}>
             <div className={cls.actionInfo}>
-                <div className={cls.actionDate}>{action.time}</div>
+                <div className={cls.actionDate}>{action.time ? action.time : '00:00'}</div>
                 <p className={cls.actionText}>
                     <Trans
                         defaults=""
@@ -56,7 +37,7 @@ export const ActionStatusItem = memo((props: ActionStatusItemProps) => {
                 </p>
             </div>
 
-            <div className={cls.actionIcon}>
+            <div className={classNames(cls.actionIcon, modsWithStatus)}>
                 {mapStatusToAction(action.action)}
             </div>
         </div>

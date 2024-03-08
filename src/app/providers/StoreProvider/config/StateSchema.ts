@@ -9,7 +9,7 @@ import { AxiosInstance } from 'axios';
 import { rtkApi } from 'shared/api/rtkApi';
 import { BreedsListSchema } from 'entities/Breeds';
 import { BreedInfoSchema } from 'entities/Breeds/model/types/breeds';
-import { VotingActionsSchema } from 'pages/VotingPage/model/types/votingActionsSchema';
+import { VotingActionsSchema } from 'features/votingActions/model/types/votingActionsSchema';
 import { VotingAnimalSchema } from 'entities/Voting/model/types/voting';
 
 export interface StateSchema {

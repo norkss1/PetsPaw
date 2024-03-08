@@ -10,7 +10,8 @@ import {
     getVotingAnimalIsLoading,
 } from 'entities/Voting/model/selectors/votingAnimal';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { IVotingAnimal } from 'entities/Voting/model/types/voting';
+import { VotingActions } from 'features/votingActions/ui/VotingActions/VotingActions';
+import { IVotingAnimal } from 'entities/Voting';
 import cls from './VotingAnimal.module.scss';
 
 interface VotingAnimalProps {
@@ -38,16 +39,20 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
 
     if (isLoading) {
         return (
-            <Skeleton
-                width="100%"
-                height="360px"
-                borderRadius="20px"
-            />
+            <div className={classNames(cls.VotingAnimal, {}, [className])}>
+                {votingAnimalItem && <VotingActions animal={votingAnimalItem} />}
+                <Skeleton
+                    width="100%"
+                    height="360px"
+                    borderRadius="20px"
+                />
+            </div>
         );
     }
 
     return (
         <div className={classNames(cls.VotingAnimal, {}, [className])}>
+            {votingAnimalItem && <VotingActions animal={votingAnimalItem} />}
             <AppImage
                 className={cls.votingAnimalImg}
                 src={votingAnimalItem?.url}

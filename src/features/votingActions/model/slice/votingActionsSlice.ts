@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IActionStatus } from 'entities/ActionStatus';
-import { VotingActionsSchema } from '../../model/types/votingActionsSchema';
+import { VotingActionsSchema } from '../types/votingActionsSchema';
 
 const initialState: VotingActionsSchema = {
     actions: [],
