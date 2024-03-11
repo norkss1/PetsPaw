@@ -27,6 +27,10 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
 
     const [votingAnimalItem, setVotingAnimalItem] = useState<IVotingAnimal>();
 
+    const changeAnimalImage = () => {
+        dispatch(fetchVotingAnimal());
+    };
+
     useInitialEffect(() => {
         dispatch(fetchVotingAnimal());
     });
@@ -40,7 +44,6 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
     if (isLoading) {
         return (
             <div className={classNames(cls.VotingAnimal, {}, [className])}>
-                {votingAnimalItem && <VotingActions animal={votingAnimalItem} />}
                 <Skeleton
                     width="100%"
                     height="360px"
@@ -52,7 +55,7 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
 
     return (
         <div className={classNames(cls.VotingAnimal, {}, [className])}>
-            {votingAnimalItem && <VotingActions animal={votingAnimalItem} />}
+            {votingAnimalItem && <VotingActions animal={votingAnimalItem} handleChangeImage={changeAnimalImage} />}
             <AppImage
                 className={cls.votingAnimalImg}
                 src={votingAnimalItem?.url}

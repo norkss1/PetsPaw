@@ -2,28 +2,32 @@ import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { votingActionsActions } from 'features/votingActions';
 import { mapStatusToAction } from 'shared/lib/render/mapStatusToAction';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import useFormattedTime from 'shared/lib/hooks/useFormattedTime/useFormattedTime';
 import { IActionStatus } from 'entities/ActionStatus';
 import { IVotingAnimal } from 'entities/Voting';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './VotingActions.module.scss';
 
 interface VotingActionsProps {
     className?: string;
     animal: IVotingAnimal;
+    handleChangeImage: () => void;
 }
 
 const actionStatuses = ['like', 'favorite', 'dislike'];
 
 export const VotingActions = (props: VotingActionsProps) => {
-    const { className, animal } = props;
+    const { className, animal, handleChangeImage } = props;
     const dispatch = useAppDispatch();
+    const formattedTime = useFormattedTime();
 
     const addVotingActionClick = useCallback((value: IActionStatus) => {
+        handleChangeImage();
         dispatch(votingActionsActions.addAction(value));
-    }, [dispatch]);
+    }, [dispatch, handleChangeImage]);
 
     return (
-        <div className={classNames(cls.VotingActions, {}, [className])}>
+        <div key={animal.id} className={classNames(cls.VotingActions, {}, [className])}>
             {actionStatuses.map((item: string) => {
                 const modsForAction: Mods = {
                     [cls[item]]: true,
@@ -31,7 +35,7 @@ export const VotingActions = (props: VotingActionsProps) => {
 
                 const actionStatusInfo = {
                     id: animal.id,
-                    time: '',
+                    time: formattedTime,
                     action: item,
                 };
 
