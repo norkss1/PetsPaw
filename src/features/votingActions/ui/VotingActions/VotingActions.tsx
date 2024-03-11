@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { votingActionsActions } from 'features/votingActions';
 import { mapStatusToAction } from 'shared/lib/render/mapStatusToAction';
@@ -40,7 +41,11 @@ export const VotingActions = (props: VotingActionsProps) => {
                 };
 
                 return (
-                    <div className={classNames(cls.action, modsForAction)} onClick={() => addVotingActionClick(actionStatusInfo)}>
+                    <div
+                        key={`action-${uuidv4()}`}
+                        className={classNames(cls.action, modsForAction)}
+                        onClick={() => addVotingActionClick(actionStatusInfo)}
+                    >
                         {mapStatusToAction(item)}
                     </div>
                 );

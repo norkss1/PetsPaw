@@ -33,6 +33,8 @@ export const createGridPattern = (props: createGridPatternProps, ItemComponent: 
         ));
     };
 
+    const skeletonItems = skeletonGenerator();
+
     const containerGenerator = () => {
         if (isLoading) {
             const gridContainerList = numberArray(2);
@@ -43,7 +45,7 @@ export const createGridPattern = (props: createGridPatternProps, ItemComponent: 
 
                 return (
                     <div key={keyValue} className={classNames(cls.gridContainer, isMods)}>
-                        {skeletonGenerator()}
+                        {skeletonItems}
                     </div>
                 );
             });

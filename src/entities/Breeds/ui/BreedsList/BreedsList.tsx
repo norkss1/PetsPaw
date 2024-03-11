@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
@@ -32,6 +32,7 @@ export const BreedsList = memo((props: BreedsProps) => {
     const { t } = useTranslation('breeds');
 
     const isLoading = useSelector(getBreedsListIsLoading);
+
     const error = useSelector(getBreedsListError);
     const breedsListData = useSelector(getBreedsListData);
     let content;

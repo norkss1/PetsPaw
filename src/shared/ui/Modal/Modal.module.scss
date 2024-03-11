@@ -21,7 +21,8 @@
     position: absolute;
     top: 30px;
     right: 30px;
-    left: var(--content-indent);
+    max-width: 690px;
+    width: 50%;
     bottom: 30px;
     padding: 20px;
     border-radius: 20px;
@@ -30,7 +31,6 @@
     transition: 0.5s all;
     transform: scale(0.5);
     opacity: 0.2;
-    max-width: 60%;
     z-index: var(--modal-z-index);
 }
 

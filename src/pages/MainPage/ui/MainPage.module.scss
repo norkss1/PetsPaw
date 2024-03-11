@@ -5,14 +5,9 @@
 
     .mainPageImage {
         position: absolute;
-        min-width: 55%;
-        width: auto;
+        width: 110%;
         top: 50%;
         right: 0;
         transform: translateY(-50%);
-
-        @media (min-width: 1440px) {
-            min-width: 45%;
-        }
     }
 }

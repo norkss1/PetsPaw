@@ -51,8 +51,8 @@ const BreedsPage = (props: BreedsPageProps) => {
                             { value: 10, content: 'Limit: 10' },
                             { value: 15, content: 'Limit: 15' },
                             { value: 20, content: 'Limit: 20' },
-                            { value: 20, content: 'Limit: 40' },
-                            { value: 20, content: 'Limit: 60' },
+                            { value: 40, content: 'Limit: 40' },
+                            { value: 60, content: 'Limit: 60' },
                         ]}
                     />
                 </div>

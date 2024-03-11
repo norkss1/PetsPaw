@@ -41,7 +41,7 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
         }
     }, [votingAnimalData]);
 
-    if (isLoading) {
+    if (isLoading || votingAnimalItem === undefined) {
         return (
             <div className={classNames(cls.VotingAnimal, {}, [className])}>
                 <Skeleton
@@ -59,6 +59,13 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
             <AppImage
                 className={cls.votingAnimalImg}
                 src={votingAnimalItem?.url}
+                fallback={(
+                    <Skeleton
+                        width="100%"
+                        height="360px"
+                        borderRadius="20px"
+                    />
+                )}
             />
         </div>
     );
