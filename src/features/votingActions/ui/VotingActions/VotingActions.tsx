@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { votingActionsActions } from 'features/votingActions';
@@ -21,9 +21,16 @@ export const VotingActions = (props: VotingActionsProps) => {
     const { className, animal, handleChangeImage } = props;
     const dispatch = useAppDispatch();
     const formattedTime = useFormattedTime();
+    const [activeFavorite, setActiveFavorite] = useState(false);
 
     const addVotingActionClick = useCallback((value: IActionStatus) => {
-        handleChangeImage();
+        if (value.action === 'favorite') {
+            setActiveFavorite(true);
+        } else {
+            handleChangeImage();
+            setActiveFavorite(false);
+        }
+
         dispatch(votingActionsActions.addAction(value));
     }, [dispatch, handleChangeImage]);
 
@@ -32,6 +39,7 @@ export const VotingActions = (props: VotingActionsProps) => {
             {actionStatuses.map((item: string) => {
                 const modsForAction: Mods = {
                     [cls[item]]: true,
+                    [cls.activeFavorite]: (item === 'favorite') && activeFavorite,
                 };
 
                 const actionStatusInfo = {
@@ -46,7 +54,7 @@ export const VotingActions = (props: VotingActionsProps) => {
                         className={classNames(cls.action, modsForAction)}
                         onClick={() => addVotingActionClick(actionStatusInfo)}
                     >
-                        {mapStatusToAction(item)}
+                        {mapStatusToAction(item, activeFavorite)}
                     </div>
                 );
             })}

@@ -17,6 +17,12 @@
         min-width: 446px;
         min-height: 554px;
 
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+
         .switchers {
             display: flex;
             align-items: center;

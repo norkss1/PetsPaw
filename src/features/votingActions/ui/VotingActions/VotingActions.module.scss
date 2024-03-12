@@ -20,6 +20,10 @@
         transition: 0.3s linear background-color;
         cursor: pointer;
 
+        &.activeFavorite {
+            pointer-events: none;
+        }
+
         svg {
             width: 30px;
             height: 30px;

@@ -9,6 +9,8 @@ import { BadgeInfo } from 'shared/ui/BadgeInfo/BadgeInfo';
 import { fetchBreedsList } from 'entities/Breeds/model/services/fetchBreedsList/fetchBreedsList';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useSelector } from 'react-redux';
+import { getBreedsListData } from 'entities/Breeds/model/selectors/breedsList';
 import cls from './BreedsPage.module.scss';
 
 interface BreedsPageProps {
@@ -20,6 +22,8 @@ const BreedsPage = (props: BreedsPageProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('breeds');
 
+    const breedsListData = useSelector(getBreedsListData);
+
     const contentPageRef = useRef<HTMLDivElement>(null);
     const { scrollPosition, handleScroll } = useScroll({ ref: contentPageRef });
     const [limitValue, setLimitValue] = useState({ value: 10, content: 'Limit: 10' });
@@ -29,7 +33,9 @@ const BreedsPage = (props: BreedsPageProps) => {
     };
 
     useInitialEffect(() => {
-        dispatch(fetchBreedsList());
+        if (!breedsListData) {
+            dispatch(fetchBreedsList());
+        }
     });
 
     return (

@@ -1,4 +1,5 @@
 import FavoriteIcon from 'shared/assets/icons/favorite-icon.svg';
+import FavoriteFilledIcon from 'shared/assets/icons/favorite-filled-icon.svg';
 import LikeIcon from 'shared/assets/icons/like-icon.svg';
 import DislikeIcon from 'shared/assets/icons/dislike-icon.svg';
 
@@ -8,7 +9,7 @@ export enum ActionStatus {
     FAVORITE = 'favorite',
 }
 
-export const mapStatusToAction = (status: string) => {
+export const mapStatusToAction = (status: string, activeFavorite?: boolean) => {
     switch (status) {
     case ActionStatus.LIKE:
         return <LikeIcon />;
@@ -17,7 +18,7 @@ export const mapStatusToAction = (status: string) => {
         return <DislikeIcon />;
 
     case ActionStatus.FAVORITE:
-        return <FavoriteIcon />;
+        return activeFavorite ? <FavoriteFilledIcon /> : <FavoriteIcon />;
 
     default: return null;
     }

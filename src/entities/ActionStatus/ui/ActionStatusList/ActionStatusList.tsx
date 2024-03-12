@@ -26,7 +26,7 @@ export const ActionStatusList = memo((props: ActionStatusListProps) => {
         <div className={classNames(cls.ActionStatusList, {}, [className])}>
             {actions?.length ? (
                 actions.map((action) => (
-                    <ActionStatusItem key={action.id} action={action} />
+                    <ActionStatusItem key={`${action.id}-${action.action}`} action={action} />
                 ))
             ) : null}
         </div>

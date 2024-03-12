@@ -32,7 +32,6 @@ export const BreedsList = memo((props: BreedsProps) => {
     const { t } = useTranslation('breeds');
 
     const isLoading = useSelector(getBreedsListIsLoading);
-
     const error = useSelector(getBreedsListError);
     const breedsListData = useSelector(getBreedsListData);
     let content;

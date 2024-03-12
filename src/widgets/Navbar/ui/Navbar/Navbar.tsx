@@ -1,9 +1,12 @@
 import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Text, TextSize } from 'shared/ui/Text';
-import { useTranslation } from 'react-i18next';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
+import LogoLight from 'shared/assets/icons/logo-light.svg';
+import LogoDark from 'shared/assets/icons/logo-dark.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { NavbarItemsList } from '../../model/items';
 import { NavbarItem } from '../NavbarItem/NavbarItem';
 import cls from './Navbar.module.scss';
@@ -14,10 +17,15 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className = '' }: NavbarProps) => {
     const { t } = useTranslation('home');
+    const { theme } = useTheme();
+    const isThemeLight = theme === Theme.LIGHT;
 
     return (
         <div data-testid="navbar" className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.container}>
+                <div className={cls.logo}>
+                    {isThemeLight ? <LogoLight /> : <LogoDark />}
+                </div>
                 <div className={cls.switchers}>
                     <LangSwitcher />
                     <ThemeSwitcher />
