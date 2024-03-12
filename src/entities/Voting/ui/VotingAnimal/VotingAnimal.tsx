@@ -1,17 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AppImage } from 'shared/ui/AppImage';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Modal } from 'shared/ui/Modal/Modal';
 import { fetchVotingAnimal } from 'entities/Voting/model/services/fetchVoitingAnimal';
 import {
     getVotingAnimalData,
     getVotingAnimalIsLoading,
 } from 'entities/Voting/model/selectors/votingAnimal';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { VotingActions } from 'features/votingActions/ui/VotingActions/VotingActions';
 import { IVotingAnimal } from 'entities/Voting';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './VotingAnimal.module.scss';
 
 interface VotingAnimalProps {
@@ -26,10 +27,19 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
     const votingAnimalData = useSelector(getVotingAnimalData);
 
     const [votingAnimalItem, setVotingAnimalItem] = useState<IVotingAnimal>();
+    const [isFullImgModal, setIsFullImgModal] = useState(false);
 
     const changeAnimalImage = () => {
         dispatch(fetchVotingAnimal());
     };
+
+    const onOpenModal = useCallback(() => {
+        setIsFullImgModal(true);
+    }, []);
+
+    const onCloseModal = useCallback(() => {
+        setIsFullImgModal(false);
+    }, []);
 
     useInitialEffect(() => {
         dispatch(fetchVotingAnimal());
@@ -66,7 +76,19 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
                         borderRadius="20px"
                     />
                 )}
+                onClick={onOpenModal}
             />
+
+            <Modal
+                isOpen={isFullImgModal}
+                onClose={onCloseModal}
+                fullImg
+            >
+                <AppImage
+                    className={cls.votingAnimalImg}
+                    src={votingAnimalItem?.url}
+                />
+            </Modal>
         </div>
     );
 };

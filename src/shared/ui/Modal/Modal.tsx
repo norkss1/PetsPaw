@@ -19,6 +19,7 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     lazy?: boolean;
+    fullImg?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -30,6 +31,7 @@ export const Modal = (props: ModalProps) => {
         isOpen,
         onClose,
         lazy,
+        fullImg = false,
     } = props;
 
     const [isOpening, setIsOpening] = useState(false);
@@ -93,20 +95,23 @@ export const Modal = (props: ModalProps) => {
             <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div
-                        className={cls.content}
-                        onClick={onContentClick}
+                        className={fullImg ? cls.fullImg : cls.content}
+                        onClick={fullImg ? () => {} : onContentClick}
                     >
-                        <Button
-                            className={classNames(cls.closeModalBtn)}
-                            size={ButtonSize.L}
-                            theme={ButtonTheme.FORTY}
-                            onClick={closeHandler}
-                            square
-                        >
-                            <div className={classNames(cls.closeModalIcon)}>
-                                <CloseModalIcon />
-                            </div>
-                        </Button>
+                        {fullImg ? null : (
+                            <Button
+                                className={classNames(cls.closeModalBtn)}
+                                size={ButtonSize.L}
+                                theme={ButtonTheme.FORTY}
+                                onClick={closeHandler}
+                                square
+                            >
+                                <div className={classNames(cls.closeModalIcon)}>
+                                    <CloseModalIcon />
+                                </div>
+                            </Button>
+                        )}
+
                         {children}
                     </div>
                 </div>

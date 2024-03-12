@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -20,6 +20,7 @@ import { BadgeInfo, BadgeInfoTheme } from 'shared/ui/BadgeInfo/BadgeInfo';
 import { BackButton } from 'shared/ui/BackButton';
 import { BREED_ITEM_IMAGE_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Modal } from 'shared/ui/Modal/Modal';
 import cls from './BreedInfo.module.scss';
 
 interface BreedInfoProps {
@@ -36,6 +37,15 @@ export const BreedInfo = (props: BreedInfoProps) => {
     const breedsListData = useSelector(getBreedsListData);
     const [breedItem, setBreedItem] = useState<IBreedItem>();
     const [breedItemImageUrl, setBreedItemImageUrl] = useState('');
+    const [isFullImgModal, setIsFullImgModal] = useState(false);
+
+    const onOpenModal = useCallback(() => {
+        setIsFullImgModal(true);
+    }, []);
+
+    const onCloseModal = useCallback(() => {
+        setIsFullImgModal(false);
+    }, []);
 
     useInitialEffect(() => {
         if (breedsListData === undefined) {
@@ -72,7 +82,10 @@ export const BreedInfo = (props: BreedInfoProps) => {
                 </div>
 
                 <div className={classNames(cls.pageContent)}>
-                    <div className={classNames(cls.imgWrapper)}>
+                    <div
+                        className={classNames(cls.imgWrapper)}
+                        onClick={onOpenModal}
+                    >
                         {(breedItem?.image || breedItemImageUrl) && (
                             <AppImage
                                 src={breedItem?.image?.url ? breedItem.image.url : breedItemImageUrl}
@@ -129,6 +142,17 @@ export const BreedInfo = (props: BreedInfoProps) => {
                             </div>
                         </div>
                     </div>
+
+                    <Modal
+                        isOpen={isFullImgModal}
+                        onClose={onCloseModal}
+                        fullImg
+                    >
+                        <AppImage
+                            className={cls.breedItemImg}
+                            src={breedItem?.image?.url ? breedItem.image.url : breedItemImageUrl}
+                        />
+                    </Modal>
                 </div>
             </div>
         </div>

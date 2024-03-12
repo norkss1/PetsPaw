@@ -24,7 +24,6 @@ export const UploadModal = (props: UploadModalProps) => {
             <Suspense fallback={<Loader />}>
                 <UploadWindowAsync />
             </Suspense>
-
         </Modal>
     );
 };

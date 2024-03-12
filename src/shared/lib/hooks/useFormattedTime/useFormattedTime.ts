@@ -19,7 +19,7 @@ const useFormattedTime = () => {
 
         const interval = setInterval(() => {
             setFormattedTime(getCurrentTime());
-        }, 1);
+        }, 200);
 
         return () => clearInterval(interval);
     }, []);
