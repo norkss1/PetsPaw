@@ -11,11 +11,7 @@ export const votingActionsSlice = createSlice({
     initialState,
     reducers: {
         addAction: (state, { payload }: PayloadAction<IActionStatus>) => {
-            if (payload.action === 'favorite') {
-                state.actions.unshift(payload);
-            } else {
-                state.actions.unshift(payload);
-            }
+            state.actions.unshift(payload);
         },
     },
 });

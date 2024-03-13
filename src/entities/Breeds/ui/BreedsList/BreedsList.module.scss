@@ -6,12 +6,13 @@
         display: grid;
         padding: 0 20px;
         margin-bottom: 20px;
-        gap: 20px;
+        grid-gap: 20px;
         height: 460px;
-        grid-template-areas:
-            "A A A A   B B B B   C C C C"
-            "A A A A   D D D D   D D D D"
-            "E E E E   D D D D   D D D D";
+        grid-template:
+            "A B C" 140px
+            "A D D" 140px
+            "E D D" 140px
+            / 200px 200px 200px;
 
         .item {
             position: relative;
@@ -45,9 +46,10 @@
     }
 
     .reverse {
-        grid-template-areas:
-            "C C C C   B B B B   A A A A"
-            "D D D D   D D D D   A A A A"
-            "D D D D   D D D D   E E E E";
+        grid-template:
+            "A B C" 140px
+            "D D C" 140px
+            "D D E" 140px
+            / 200px 200px 200px;
     }
 }

@@ -6,22 +6,16 @@
 .item1 {
     grid-area: A;
     overflow: hidden;
-    width: 200px;
-    max-height: 300px;
 }
 
 .item2 {
     grid-area: B;
     overflow: hidden;
-    width: 200px;
-    max-height: 140px;
 }
 
 .item3 {
     grid-area: C;
     overflow: hidden;
-    width: 200px;
-    max-height: 140px;
 }
 
 .item4 {
@@ -32,7 +26,6 @@
 .item5 {
     grid-area: E;
     overflow: hidden;
-    max-height: 140px;
 }
 
 .infoOverlay {
