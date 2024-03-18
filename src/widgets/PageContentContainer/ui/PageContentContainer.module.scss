@@ -1,21 +1,12 @@
-.DislikesPage {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+.PageContentContainer {
     padding: 20px;
     width: 100%;
     border-radius: 20px;
     background-color: var(--inverted-bg-color);
+    overflow-y: auto;
     transition: 0.3s linear;
     transition-property: height, border-radius;
     height: var(--content-page-height);
-
-    .dislikesPageHeader {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        gap: 10px;
-    }
 
     &::-webkit-scrollbar { width: 0; }
 }

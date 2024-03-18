@@ -1,10 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { ILikesItem } from 'entities/Likes/model/types/likes';
-import { addLikesActions } from 'entities/Likes';
+import { addDislikesActions, IDislikesItem } from 'entities/Dislikes';
 
-export const fetchLikesDataAnimalById = createAsyncThunk<
-    ILikesItem,
+export const fetchDislikesDataAnimalById = createAsyncThunk<
+    IDislikesItem,
     string | undefined,
     ThunkConfig<string>
 >(
@@ -17,7 +16,7 @@ export const fetchLikesDataAnimalById = createAsyncThunk<
                 throw new Error();
             }
 
-            const response = await extra.api.get<ILikesItem>(
+            const response = await extra.api.get<IDislikesItem>(
                 `/images/${animalId}`,
             );
 
@@ -25,7 +24,7 @@ export const fetchLikesDataAnimalById = createAsyncThunk<
                 throw new Error();
             }
 
-            dispatch(addLikesActions.addLikesList(response.data));
+            dispatch(addDislikesActions.addDislikesList(response.data));
 
             return response.data;
         } catch (error) {

@@ -42,7 +42,9 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
     }, []);
 
     useInitialEffect(() => {
-        dispatch(fetchVotingAnimal());
+        if (votingAnimalData?.length === 0) {
+            dispatch(fetchVotingAnimal());
+        }
     });
 
     useEffect(() => {

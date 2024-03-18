@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
     DynamicModuleLoader,
@@ -8,8 +7,9 @@ import {
 
 import { useSelector } from 'react-redux';
 import { Text, TextAlign } from 'shared/ui/Text';
-import { createGridPattern } from 'shared/lib/render/createGridPattern';
 import { BreedItem } from 'entities/Breeds';
+import { GridPatternList } from 'widgets/GridPatternList';
+import { classNames } from 'shared/lib/classNames/classNames';
 import {
     getBreedsListData,
     getBreedsListError,
@@ -34,20 +34,12 @@ export const BreedsList = memo((props: BreedsProps) => {
     const isLoading = useSelector(getBreedsListIsLoading);
     const error = useSelector(getBreedsListError);
     const breedsListData = useSelector(getBreedsListData);
-    let content;
 
-    if (isLoading) {
-        content = createGridPattern({ cls, isLoading }, BreedItem);
-    } else if (error) {
-        content = (
-            <Text
-                title={t('fetch_error')}
-                align={TextAlign.CENTER}
-            />
-        );
-    } else if (breedsListData) {
-        content = createGridPattern({ cls, data: breedsListData }, BreedItem);
-    }
+    const content = isLoading
+        ? <GridPatternList isLoading={isLoading} ItemComponent={BreedItem} />
+        : error
+            ? <Text title={t('fetch_error')} align={TextAlign.CENTER} />
+            : <GridPatternList isLoading={isLoading} data={breedsListData} ItemComponent={BreedItem} />;
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>

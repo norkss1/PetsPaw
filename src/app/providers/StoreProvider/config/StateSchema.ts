@@ -11,11 +11,13 @@ import { BreedInfoSchema, BreedsListSchema } from 'entities/Breeds';
 import { VotingAnimalSchema } from 'entities/Voting';
 import { VotingActionsSchema } from 'features/votingActions';
 import { LikesListSchema } from 'entities/Likes';
+import { DislikesListSchema } from 'entities/Dislikes';
 
 export interface StateSchema {
     votingAnimal: VotingAnimalSchema;
     votingActions: VotingActionsSchema;
     likesList: LikesListSchema,
+    dislikesList: DislikesListSchema,
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers

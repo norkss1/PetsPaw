@@ -1,30 +1,6 @@
-.LikesPage {
+.likesPageHeader {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding: 20px;
-    width: 100%;
-    border-radius: 20px;
-    background-color: var(--inverted-bg-color);
-    transition: 0.3s linear;
-    transition-property: height, border-radius;
-    height: var(--content-page-height);
-
-    .likesPageHeader {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        gap: 10px;
-    }
-
-    &::-webkit-scrollbar { width: 0; }
-}
-
-.overflowY {
-    overflow-y: auto;
-}
-
-.unlimitedScreenContent {
-    height: calc(100vh - 80px);
-    border-radius: 20px 20px 0 0;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
 }

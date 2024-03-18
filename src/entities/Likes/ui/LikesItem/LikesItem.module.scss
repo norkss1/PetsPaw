@@ -28,10 +28,40 @@
     overflow: hidden;
 }
 
+.fullScreenImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s linear opacity;
+    border-radius: 20px;
+    background-color: var(--overlay-color);
+    z-index: 100;
+
+    .img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 .likesImg {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
     cursor: pointer;
+    border-radius: 20px;
+    z-index: 10;
+
+    &.full {
+        cursor: default;
+        border: none;
+    }
+}
+
+.item:hover .fullScreenImg {
+    opacity: 1;
 }

@@ -1,31 +1,5 @@
-.BreedsPage {
+.breedsPageHeader {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    margin-bottom: 20px;
     gap: 10px;
-    height: 100%;
-
-    .breedsPageContent {
-        padding-top: 20px;
-        width: 100%;
-        border-radius: 20px;
-        background-color: var(--inverted-bg-color);
-        overflow-y: auto;
-        transition: 0.3s linear height;
-        height: var(--content-page-height);
-
-        .breedsPageHeader {
-            display: flex;
-            padding: 0 20px;
-            margin-bottom: 20px;
-            gap: 10px;
-        }
-    }
-
-    .unlimitedScreenContent {
-        height: calc(100vh - 80px);
-    }
-
-    .breedsPageContent::-webkit-scrollbar { width: 0; }
 }

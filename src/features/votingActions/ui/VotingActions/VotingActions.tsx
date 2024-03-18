@@ -7,6 +7,7 @@ import useFormattedTime from 'shared/lib/hooks/useFormattedTime/useFormattedTime
 import { IActionStatus } from 'entities/ActionStatus';
 import { IVotingAnimal } from 'entities/Voting';
 import { fetchLikesDataAnimalById } from 'entities/Likes/model/services/fetchLikesDataAnimalById';
+import { fetchDislikesDataAnimalById } from 'entities/Dislikes/model/services/fetchDislikesDataAnimalById';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './VotingActions.module.scss';
 
@@ -37,13 +38,13 @@ export const VotingActions = (props: VotingActionsProps) => {
             break;
 
         case actionStatuses.DISLIKE:
-            dispatch(fetchLikesDataAnimalById(animal.id));
+            dispatch(fetchDislikesDataAnimalById(animal.id));
             handleChangeImage();
             setActiveFavorite(false);
             break;
 
         case actionStatuses.FAVOURITE:
-            dispatch(fetchLikesDataAnimalById(animal.id));
+            // dispatch(fetchLikesDataAnimalById(animal.id));
             setActiveFavorite(true);
             break;
 

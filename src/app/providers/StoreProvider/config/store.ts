@@ -7,6 +7,7 @@ import { $api } from 'shared/api/api';
 import { votingAnimalReducer } from 'entities/Voting';
 import { votingActionsReducer } from 'features/votingActions';
 import { addLikesReducer } from 'entities/Likes';
+import { addDislikesReducer } from 'entities/Dislikes';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -18,6 +19,7 @@ export function createReduxStore(
         votingAnimal: votingAnimalReducer,
         votingActions: votingActionsReducer,
         likesList: addLikesReducer,
+        dislikesList: addDislikesReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
