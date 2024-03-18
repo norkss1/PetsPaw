@@ -10,10 +10,10 @@
         grid-gap: 20px;
         height: 460px;
         grid-template:
-            "A B C" 140px
-            "A D D" 140px
-            "E D D" 140px
-            / 200px 200px 200px;
+            "A B C" 1fr
+            "A D D" 1fr
+            "E D D" 1fr
+            / 1fr 1fr 1fr;
 
         .item {
             position: relative;
@@ -48,9 +48,9 @@
 
     .reverse {
         grid-template:
-            "A B C" 140px
-            "D D C" 140px
-            "D D E" 140px
-            / 200px 200px 200px;
+            "A B C" 1fr
+            "D D C" 1fr
+            "D D E" 1fr
+            / 1fr 1fr 1fr;
     }
 }

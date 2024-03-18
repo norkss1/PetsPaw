@@ -10,8 +10,8 @@ import {
     getVotingAnimalData,
     getVotingAnimalIsLoading,
 } from 'entities/Voting/model/selectors/votingAnimal';
-import { VotingActions } from 'features/votingActions/ui/VotingActions/VotingActions';
 import { IVotingAnimal } from 'entities/Voting';
+import { VotingActions } from 'features/votingActions';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './VotingAnimal.module.scss';
 

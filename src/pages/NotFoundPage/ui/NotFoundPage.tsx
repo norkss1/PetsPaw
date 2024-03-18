@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import PageNotFoundIcon from 'shared/assets/icons/page_not_found.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {

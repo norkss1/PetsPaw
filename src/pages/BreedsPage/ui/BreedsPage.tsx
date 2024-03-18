@@ -1,16 +1,17 @@
 import React, { useRef, useState } from 'react';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { BreedsList } from 'entities/Breeds';
-import { useScroll } from 'shared/lib/hooks/useScroll/useScroll';
-import { Select, SelectTheme } from 'shared/ui/Select/Select';
-import { BackButton } from 'shared/ui/BackButton';
-import { BadgeInfo } from 'shared/ui/BadgeInfo/BadgeInfo';
-import { fetchBreedsList } from 'entities/Breeds/model/services/fetchBreedsList/fetchBreedsList';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+
+import { BreedsList } from 'entities/Breeds';
+import { fetchBreedsList } from 'entities/Breeds/model/services/fetchBreedsList/fetchBreedsList';
 import { getBreedsListData } from 'entities/Breeds/model/selectors/breedsList';
+
+import { useScroll } from 'shared/lib/hooks/useScroll/useScroll';
+import { Select, SelectTheme } from 'shared/ui/Select/Select';
+import { HeaderPageInfo } from 'widgets/HeaderPageInfo';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './BreedsPage.module.scss';
 
 interface BreedsPageProps {
@@ -46,8 +47,7 @@ const BreedsPage = (props: BreedsPageProps) => {
                 onScroll={handleScroll}
             >
                 <div className={cls.breedsPageHeader}>
-                    <BackButton />
-                    <BadgeInfo text={t('page_name')} />
+                    <HeaderPageInfo badgeText={t('page_name')} />
                     <Select
                         theme={SelectTheme.FILLED}
                         value={limitValue}

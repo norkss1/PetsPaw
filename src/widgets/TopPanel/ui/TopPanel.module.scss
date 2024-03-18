@@ -1,7 +1,23 @@
 .TopPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     width: 100%;
 
     .inputWrapper {
         width: 470px;
+    }
+
+    .topPanelBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--thirty-btn-color);
+        }
     }
 }

@@ -1,0 +1,10 @@
+.FavouritesPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+    width: 100%;
+    height: var(--content-page-height);
+    border-radius: 20px;
+    background-color: var(--inverted-bg-color);
+}

@@ -7,15 +7,15 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { rtkApi } from 'shared/api/rtkApi';
-import { BreedsListSchema } from 'entities/Breeds';
-import { BreedInfoSchema } from 'entities/Breeds/model/types/breeds';
-import { VotingActionsSchema } from 'features/votingActions/model/types/votingActionsSchema';
-import { VotingAnimalSchema } from 'entities/Voting/model/types/voting';
+import { BreedInfoSchema, BreedsListSchema } from 'entities/Breeds';
+import { VotingAnimalSchema } from 'entities/Voting';
+import { VotingActionsSchema } from 'features/votingActions';
+import { LikesListSchema } from 'entities/Likes';
 
 export interface StateSchema {
-    // counter: CounterSchema;
     votingAnimal: VotingAnimalSchema;
     votingActions: VotingActionsSchema;
+    likesList: LikesListSchema,
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers

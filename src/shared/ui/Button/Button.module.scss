@@ -33,6 +33,10 @@
 .thirty {
     background-color: var(--thirty-bg-btn-color);
     color: var(--thirty-btn-color);
+
+    &:hover {
+        background-color: var(--secondary-bg-btn-color);
+    }
 }
 
 .forty {

@@ -1,11 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { classNames } from 'shared/lib/classNames/classNames';
 import UploadIcon from 'shared/assets/icons/upload.svg';
 import { UploadModal } from 'features/UploadImage';
-import { BackButton } from 'shared/ui/BackButton';
-import { BadgeInfo } from 'shared/ui/BadgeInfo/BadgeInfo';
+import { HeaderPageInfo } from 'widgets/HeaderPageInfo';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './GalleryPage.module.scss';
 
 const GalleryPage = () => {
@@ -24,10 +23,7 @@ const GalleryPage = () => {
     return (
         <div className={classNames(cls.GalleryPage)}>
             <div className={cls.galleryPageHeader}>
-                <div className={cls.galleryPageHeaderInfo}>
-                    <BackButton />
-                    <BadgeInfo text={t('page_name')} />
-                </div>
+                <HeaderPageInfo badgeText={t('page_name')} />
 
                 <Button
                     className={classNames(cls.uploadBtn)}
