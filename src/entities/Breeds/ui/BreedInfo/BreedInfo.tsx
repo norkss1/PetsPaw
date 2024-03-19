@@ -20,7 +20,7 @@ import { BadgeInfo, BadgeInfoTheme } from 'shared/ui/BadgeInfo/BadgeInfo';
 import { BackButton } from 'shared/ui/BackButton';
 import { BREED_ITEM_IMAGE_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal/Modal';
+import { FullScreenOverlay } from 'shared/ui/FullScreenOverlay/FullScreenOverlay';
 import cls from './BreedInfo.module.scss';
 
 interface BreedInfoProps {
@@ -82,10 +82,15 @@ export const BreedInfo = (props: BreedInfoProps) => {
                 </div>
 
                 <div className={classNames(cls.pageContent)}>
-                    <div
-                        className={classNames(cls.imgWrapper)}
-                        onClick={onOpenModal}
-                    >
+                    <div className={classNames(cls.imgWrapper)}>
+                        <FullScreenOverlay
+                            className={cls.fullScreenImg}
+                            url={breedItem?.image?.url ? breedItem.image.url : breedItemImageUrl}
+                            isOpen={isFullImgModal}
+                            onClose={onCloseModal}
+                            onClick={onOpenModal}
+                        />
+
                         {(breedItem?.image || breedItemImageUrl) && (
                             <AppImage
                                 src={breedItem?.image?.url ? breedItem.image.url : breedItemImageUrl}
@@ -142,17 +147,6 @@ export const BreedInfo = (props: BreedInfoProps) => {
                             </div>
                         </div>
                     </div>
-
-                    <Modal
-                        isOpen={isFullImgModal}
-                        onClose={onCloseModal}
-                        fullImg
-                    >
-                        <AppImage
-                            className={cls.breedItemImg}
-                            src={breedItem?.image?.url ? breedItem.image.url : breedItemImageUrl}
-                        />
-                    </Modal>
                 </div>
             </div>
         </div>

@@ -1,10 +1,9 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AppImage } from 'shared/ui/AppImage';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { fetchVotingAnimal } from 'entities/Voting/model/services/fetchVoitingAnimal';
 import {
     getVotingAnimalData,
@@ -13,6 +12,7 @@ import {
 import { IVotingAnimal } from 'entities/Voting';
 import { VotingActions } from 'features/votingActions';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { FullScreenOverlay } from 'shared/ui/FullScreenOverlay/FullScreenOverlay';
 import cls from './VotingAnimal.module.scss';
 
 interface VotingAnimalProps {
@@ -67,7 +67,14 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
 
     return (
         <div className={classNames(cls.VotingAnimal, {}, [className])}>
-            {votingAnimalItem && <VotingActions animal={votingAnimalItem} handleChangeImage={changeAnimalImage} />}
+            <FullScreenOverlay
+                className={cls.fullScreenImg}
+                url={votingAnimalItem?.url}
+                isOpen={isFullImgModal}
+                onClose={onCloseModal}
+                onClick={onOpenModal}
+            />
+
             <AppImage
                 className={cls.votingAnimalImg}
                 src={votingAnimalItem?.url}
@@ -81,16 +88,7 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
                 onClick={onOpenModal}
             />
 
-            <Modal
-                isOpen={isFullImgModal}
-                onClose={onCloseModal}
-                fullImg
-            >
-                <AppImage
-                    className={cls.votingAnimalImg}
-                    src={votingAnimalItem?.url}
-                />
-            </Modal>
+            {votingAnimalItem && <VotingActions animal={votingAnimalItem} handleChangeImage={changeAnimalImage} />}
         </div>
     );
 };
