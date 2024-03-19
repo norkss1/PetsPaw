@@ -66,27 +66,30 @@ export const VotingAnimal = (props: VotingAnimalProps) => {
     }
 
     return (
-        <div className={classNames(cls.VotingAnimal, {}, [className])}>
-            <FullScreenOverlay
-                className={cls.fullScreenImg}
-                url={votingAnimalItem?.url}
-                isOpen={isFullImgModal}
-                onClose={onCloseModal}
-                onClick={onOpenModal}
-            />
+        <div className={cls.votingAnimalWrapper}>
+            <div className={classNames(cls.votingAnimal, {}, [className])}>
+                <FullScreenOverlay
+                    className={cls.fullScreenImg}
+                    url={votingAnimalItem?.url}
+                    isOpen={isFullImgModal}
+                    onClose={onCloseModal}
+                    onClick={onOpenModal}
+                />
 
-            <AppImage
-                className={cls.votingAnimalImg}
-                src={votingAnimalItem?.url}
-                fallback={(
-                    <Skeleton
-                        width="100%"
-                        height="360px"
-                        borderRadius="20px"
-                    />
-                )}
-                onClick={onOpenModal}
-            />
+                <AppImage
+                    className={cls.votingAnimalImg}
+                    src={votingAnimalItem?.url}
+                    fallback={(
+                        <Skeleton
+                            width="100%"
+                            height="360px"
+                            borderRadius="20px"
+                        />
+                    )}
+                    onClick={onOpenModal}
+                />
+
+            </div>
 
             {votingAnimalItem && <VotingActions animal={votingAnimalItem} handleChangeImage={changeAnimalImage} />}
         </div>
