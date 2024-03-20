@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { ILikesItem } from 'entities/Likes/model/types/likes';
-import { addLikesActions } from 'entities/Likes';
+import { ILikesItem } from 'entities/TopPanelGroup/Likes/model/types/likes';
+import { addLikesActions } from 'entities/TopPanelGroup/Likes';
 
 export const fetchLikesDataAnimalById = createAsyncThunk<
     ILikesItem,

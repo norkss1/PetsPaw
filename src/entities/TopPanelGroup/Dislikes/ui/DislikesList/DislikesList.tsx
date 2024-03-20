@@ -4,7 +4,7 @@ import {
     getDislikesListData,
     getDislikesListError,
     getDislikesListIsLoading,
-} from 'entities/Dislikes/model/selectors/dislikesList';
+} from 'entities/TopPanelGroup/Dislikes/model/selectors/dislikesList';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign } from 'shared/ui/Text';
 import { GridPatternList } from 'widgets/GridPatternList';

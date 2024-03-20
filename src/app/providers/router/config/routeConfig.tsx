@@ -4,9 +4,9 @@ import { VotingPage } from 'pages/VotingPage';
 import { BreedsPage } from 'pages/BreedsPage';
 import { BreedInfoPage } from 'pages/BreedInfoPage';
 import { GalleryPage } from 'pages/GalleryPage';
-import { LikesPage } from 'pages/LikesPage';
-import { FavouritesPage } from 'pages/FavouritesPage';
-import { DislikesPage } from 'pages/DislikesPage';
+import { LikesPage } from 'pages/TopPanelGroup/LikesPage';
+import { FavouritesPage } from 'pages/TopPanelGroup/FavouritesPage';
+import { DislikesPage } from 'pages/TopPanelGroup/DislikesPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import {
     AppRoutes,

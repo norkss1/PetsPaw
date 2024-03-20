@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { addDislikesActions, IDislikesItem } from 'entities/Dislikes';
+import { addDislikesActions, IDislikesItem } from 'entities/TopPanelGroup/Dislikes';
 
 export const fetchDislikesDataAnimalById = createAsyncThunk<
     IDislikesItem,

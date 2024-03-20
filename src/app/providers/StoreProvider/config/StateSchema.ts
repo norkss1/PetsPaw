@@ -10,8 +10,8 @@ import { rtkApi } from 'shared/api/rtkApi';
 import { BreedInfoSchema, BreedsListSchema } from 'entities/Breeds';
 import { VotingAnimalSchema } from 'entities/Voting';
 import { VotingActionsSchema } from 'features/votingActions';
-import { LikesListSchema } from 'entities/Likes';
-import { DislikesListSchema } from 'entities/Dislikes';
+import { LikesListSchema } from 'entities/TopPanelGroup/Likes';
+import { DislikesListSchema } from 'entities/TopPanelGroup/Dislikes';
 
 export interface StateSchema {
     votingAnimal: VotingAnimalSchema;

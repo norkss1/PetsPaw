@@ -1,16 +1,16 @@
 import React, { useCallback, useState } from 'react';
-import { IDislikesItem } from 'entities/Dislikes';
+import { ILikesItem } from 'entities/TopPanelGroup/Likes';
 import { AppImage } from 'shared/ui/AppImage';
 import { FullScreenOverlay } from 'shared/ui/FullScreenOverlay/FullScreenOverlay';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './DislikesItem.module.scss';
+import cls from './LikesItem.module.scss';
 
-export interface DislikesItemProps {
-    item: IDislikesItem;
+export interface LikesItemProps {
+    item: ILikesItem;
     indexItem: number;
 }
 
-export const DislikesItem = (props: DislikesItemProps) => {
+export const LikesItem = (props: LikesItemProps) => {
     const { item, indexItem } = props;
 
     const [isFullImgModal, setIsFullImgModal] = useState(false);
@@ -35,7 +35,7 @@ export const DislikesItem = (props: DislikesItemProps) => {
 
             <AppImage
                 src={item?.url}
-                className={cls.dislikesImg}
+                className={cls.likesImg}
             />
         </div>
     );

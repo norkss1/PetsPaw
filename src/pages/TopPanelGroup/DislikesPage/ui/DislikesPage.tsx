@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useScroll } from 'shared/lib/hooks/useScroll/useScroll';
 import { HeaderPageInfo } from 'widgets/HeaderPageInfo';
-import { getDislikesListData } from 'entities/Dislikes/model/selectors/dislikesList';
-import { DislikesList } from 'entities/Dislikes';
+import { DislikesList } from 'entities/TopPanelGroup/Dislikes';
+import { getDislikesListData } from 'entities/TopPanelGroup/Dislikes/model/selectors/dislikesList';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './DislikesPage.module.scss';
 

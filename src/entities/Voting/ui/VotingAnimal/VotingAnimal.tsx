@@ -4,6 +4,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AppImage } from 'shared/ui/AppImage';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { FullScreenOverlay } from 'shared/ui/FullScreenOverlay/FullScreenOverlay';
 import { fetchVotingAnimal } from 'entities/Voting/model/services/fetchVoitingAnimal';
 import {
     getVotingAnimalData,
@@ -12,7 +13,6 @@ import {
 import { IVotingAnimal } from 'entities/Voting';
 import { VotingActions } from 'features/votingActions';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FullScreenOverlay } from 'shared/ui/FullScreenOverlay/FullScreenOverlay';
 import cls from './VotingAnimal.module.scss';
 
 interface VotingAnimalProps {

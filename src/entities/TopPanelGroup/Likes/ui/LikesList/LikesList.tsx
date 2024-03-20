@@ -6,7 +6,7 @@ import {
     getLikesListData,
     getLikesListError,
     getLikesListIsLoading,
-} from 'entities/Likes/model/selectors/likesList';
+} from 'entities/TopPanelGroup/Likes/model/selectors/likesList';
 import { GridPatternList } from 'widgets/GridPatternList';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { NoItemInfo } from 'shared/ui/NoItemInfo/NoItemInfo';

@@ -6,8 +6,8 @@ import { mapStatusToAction } from 'shared/lib/render/mapStatusToAction';
 import useFormattedTime from 'shared/lib/hooks/useFormattedTime/useFormattedTime';
 import { IActionStatus } from 'entities/ActionStatus';
 import { IVotingAnimal } from 'entities/Voting';
-import { fetchLikesDataAnimalById } from 'entities/Likes/model/services/fetchLikesDataAnimalById';
-import { fetchDislikesDataAnimalById } from 'entities/Dislikes/model/services/fetchDislikesDataAnimalById';
+import { fetchLikesDataAnimalById } from 'src/entities/TopPanelGroup/Likes/model/services/fetchLikesDataAnimalById';
+import { fetchDislikesDataAnimalById } from 'src/entities/TopPanelGroup/Dislikes/model/services/fetchDislikesDataAnimalById';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import cls from './VotingActions.module.scss';
 
