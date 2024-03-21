@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { IActionStatus } from '../../model/types/actionStatus';
@@ -26,7 +27,7 @@ export const ActionStatusList = memo((props: ActionStatusListProps) => {
         <div className={classNames(cls.ActionStatusList, {}, [className])}>
             {actions?.length ? (
                 actions.map((action) => (
-                    <ActionStatusItem key={`${action.id}-${action.action}`} action={action} />
+                    <ActionStatusItem key={`${action.id}-${action.action}-${uuidv4()}`} action={action} />
                 ))
             ) : null}
         </div>

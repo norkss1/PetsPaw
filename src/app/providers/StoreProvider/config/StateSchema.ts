@@ -12,12 +12,14 @@ import { VotingAnimalSchema } from 'entities/Voting';
 import { VotingActionsSchema } from 'features/votingActions';
 import { LikesListSchema } from 'entities/TopPanelGroup/Likes';
 import { DislikesListSchema } from 'entities/TopPanelGroup/Dislikes';
+import { FavouritesListSchema } from 'entities/TopPanelGroup/Favourites';
 
 export interface StateSchema {
     votingAnimal: VotingAnimalSchema;
     votingActions: VotingActionsSchema;
     likesList: LikesListSchema,
     dislikesList: DislikesListSchema,
+    favouritesList: FavouritesListSchema,
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers

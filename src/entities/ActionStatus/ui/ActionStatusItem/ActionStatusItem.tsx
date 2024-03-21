@@ -14,7 +14,7 @@ export const ActionStatusItem = memo((props: ActionStatusItemProps) => {
     const { className, action } = props;
     const { t } = useTranslation('voting');
 
-    const actionsStatusText = `${action.action.charAt(0).toUpperCase() + action.action.slice(1)}s`;
+    const actionsStatusText = `${action.action.charAt(0).toUpperCase() + action.action.slice(1)}`;
 
     const modsWithStatus: Mods = {
         [cls[action.action]]: true,
@@ -28,7 +28,7 @@ export const ActionStatusItem = memo((props: ActionStatusItemProps) => {
                     <Trans
                         defaults=""
                         t={t}
-                        i18nKey="action_text"
+                        i18nKey={action.status === 'added' ? 'action_text_add' : 'action_text_remove'}
                         components={{
                             idComponent: <span className={cls.textId}>{action.id.toUpperCase()}</span>,
                         }}

@@ -8,6 +8,7 @@ import { votingAnimalReducer } from 'entities/Voting';
 import { votingActionsReducer } from 'features/votingActions';
 import { addLikesReducer } from 'entities/TopPanelGroup/Likes';
 import { addDislikesReducer } from 'entities/TopPanelGroup/Dislikes';
+import { addFavouritesReducer } from 'entities/TopPanelGroup/Favourites';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -20,6 +21,7 @@ export function createReduxStore(
         votingActions: votingActionsReducer,
         likesList: addLikesReducer,
         dislikesList: addDislikesReducer,
+        favouritesList: addFavouritesReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
     };
 

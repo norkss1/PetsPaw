@@ -6,7 +6,7 @@ import cls from './GridPatternList.module.scss';
 interface GridPatternListProps<T> {
     className?: string;
     isLoading?: boolean;
-    data?: Array<T & { id?: string }>;
+    data?: Array<T & { id?: string | number }>;
     ItemComponent: React.ComponentType<{ item: T; indexItem: number }>;
 }
 

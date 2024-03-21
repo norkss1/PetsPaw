@@ -1,14 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { ILikesItem } from 'entities/TopPanelGroup/Likes/model/types/likes';
-import { addLikesActions } from 'entities/TopPanelGroup/Likes';
+import {
+    fetchFavouritesData,
+} from 'entities/TopPanelGroup/Favourites/model/services/fetchFavouritesData';
 
-export const fetchLikesDataAnimalById = createAsyncThunk<
-    ILikesItem,
-    string | undefined,
+type FavouriteItemType = {
+    id: string
+};
+
+export const deleteFavouriteAnimal = createAsyncThunk<
+    FavouriteItemType,
+    number | undefined,
     ThunkConfig<string>
 >(
-    'voting/fetchLikesDataAnimalById',
+    'voting/deleteFavouriteAnimal',
     async (animalId, thunkApi) => {
         const { rejectWithValue, extra, dispatch } = thunkApi;
 
@@ -17,15 +22,15 @@ export const fetchLikesDataAnimalById = createAsyncThunk<
                 throw new Error();
             }
 
-            const response = await extra.api.get<ILikesItem>(
-                `/images/${animalId}`,
+            const response = await extra.api.delete<FavouriteItemType>(
+                `/favourites/${animalId}`,
             );
 
             if (!response.data) {
                 throw new Error();
             }
 
-            dispatch(addLikesActions.addLikesList(response.data));
+            dispatch(fetchFavouritesData());
 
             return response.data;
         } catch (error) {

@@ -8,17 +8,10 @@ import {
     getLikesListIsLoading,
 } from 'entities/TopPanelGroup/Likes/model/selectors/likesList';
 import { GridPatternList } from 'widgets/GridPatternList';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { NoItemInfo } from 'shared/ui/NoItemInfo/NoItemInfo';
 import { LikesItem } from '../LikesItem/LikesItem';
-import cls from './LikesList.module.scss';
 
-interface LikesListProps {
-    className?: string;
-}
-
-export const LikesList = (props: LikesListProps) => {
-    const { className } = props;
+export const LikesList = () => {
     const { t } = useTranslation('likes');
 
     const isLoading = useSelector(getLikesListIsLoading);
@@ -31,7 +24,7 @@ export const LikesList = (props: LikesListProps) => {
                 : <NoItemInfo />;
 
     return (
-        <div className={classNames(cls.LikesList, {}, [className])}>
+        <div>
             { content }
         </div>
     );

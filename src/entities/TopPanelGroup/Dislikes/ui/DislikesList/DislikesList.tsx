@@ -9,16 +9,9 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign } from 'shared/ui/Text';
 import { GridPatternList } from 'widgets/GridPatternList';
 import { NoItemInfo } from 'shared/ui/NoItemInfo/NoItemInfo';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { DislikesItem } from '../DislikesItem/DislikesItem';
-import cls from './DislikesList.module.scss';
 
-interface DislikesListProps {
-    className?: string;
-}
-
-export const DislikesList = (props: DislikesListProps) => {
-    const { className } = props;
+export const DislikesList = () => {
     const { t } = useTranslation('dislikes');
 
     const isLoading = useSelector(getDislikesListIsLoading);
@@ -31,7 +24,7 @@ export const DislikesList = (props: DislikesListProps) => {
                 : <NoItemInfo />;
 
     return (
-        <div className={classNames(cls.DislikesList, {}, [className])}>
+        <div>
             { content }
         </div>
     );

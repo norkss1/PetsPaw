@@ -1,0 +1,93 @@
+.item {
+    position: relative;
+    cursor: pointer;
+}
+
+.item1 {
+    grid-area: A;
+    overflow: hidden;
+}
+
+.item2 {
+    grid-area: B;
+    overflow: hidden;
+}
+
+.item3 {
+    grid-area: C;
+    overflow: hidden;
+}
+
+.item4 {
+    grid-area: D;
+    overflow: hidden;
+}
+
+.item5 {
+    grid-area: E;
+    overflow: hidden;
+}
+
+.deleteOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--primary-bg-btn-color);
+    opacity: 0;
+    transition: 0.3s linear opacity;
+    z-index: 20;
+}
+
+.deleteContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    background-color: var(--inverted-bg-color);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.3s linear;
+    transition-property: opacity, background-color;
+    z-index: 100;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--pink-color-dark);
+    }
+
+    &:hover {
+        background-color: var(--primary-bg-btn-color);
+
+        svg {
+            fill: var(--white-color);
+        }
+    }
+}
+
+.favouritesImg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.item:hover .deleteOverlay {
+    opacity: 0.6;
+}
+
+.item:hover .deleteContent {
+    opacity: 1;
+}

@@ -1,4 +1,5 @@
 {
   "page_name": "голосування",
-  "action_text": "Зображення з ID: <idComponent>{{id}}</idComponent> було додано в {{action}}"
+  "action_text_add": "Зображення з ID: <idComponent>{{id}}</idComponent> було додано в {{action}}",
+  "action_text_remove": "Зображення з ID: <idComponent>{{id}}</idComponent> було видалено з {{action}}"
 }

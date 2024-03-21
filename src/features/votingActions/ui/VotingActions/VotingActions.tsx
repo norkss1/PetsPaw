@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { votingActionsActions } from 'features/votingActions';
@@ -6,9 +6,12 @@ import { mapStatusToAction } from 'shared/lib/render/mapStatusToAction';
 import useFormattedTime from 'shared/lib/hooks/useFormattedTime/useFormattedTime';
 import { IActionStatus } from 'entities/ActionStatus';
 import { IVotingAnimal } from 'entities/Voting';
-import { fetchLikesDataAnimalById } from 'src/entities/TopPanelGroup/Likes/model/services/fetchLikesDataAnimalById';
-import { fetchDislikesDataAnimalById } from 'src/entities/TopPanelGroup/Dislikes/model/services/fetchDislikesDataAnimalById';
+import { fetchLikesDataAnimalById } from 'entities/TopPanelGroup/Likes/model/services/fetchLikesDataAnimalById';
+import { fetchDislikesDataAnimalById } from 'entities/TopPanelGroup/Dislikes/model/services/fetchDislikesDataAnimalById';
+import { addFavouriteAnimal } from 'entities/TopPanelGroup/Favourites/model/services/addFavouriteAnimal';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { getFavouritesListData } from 'entities/TopPanelGroup/Favourites/model/selectors/favouritesList';
 import cls from './VotingActions.module.scss';
 
 interface VotingActionsProps {
@@ -24,32 +27,41 @@ export const actionStatuses = {
 };
 
 export const VotingActions = (props: VotingActionsProps) => {
-    const { className, animal, handleChangeImage } = props;
+    const {
+        className,
+        animal,
+        handleChangeImage,
+    } = props;
     const dispatch = useAppDispatch();
     const formattedTime = useFormattedTime();
+
+    const favouritesList = useSelector(getFavouritesListData);
     const [activeFavorite, setActiveFavorite] = useState(false);
+
+    useEffect(() => {
+        const isFavourite = favouritesList?.some((item) => item.image_id === animal?.id);
+
+        if (isFavourite !== undefined) setActiveFavorite(isFavourite);
+    }, [favouritesList, animal]);
 
     const addVotingActionClick = useCallback((value: IActionStatus) => {
         switch (value.action) {
         case actionStatuses.LIKE:
             dispatch(fetchLikesDataAnimalById(animal.id));
             handleChangeImage();
-            setActiveFavorite(false);
             break;
 
         case actionStatuses.DISLIKE:
             dispatch(fetchDislikesDataAnimalById(animal.id));
             handleChangeImage();
-            setActiveFavorite(false);
             break;
 
         case actionStatuses.FAVOURITE:
-            // dispatch(fetchLikesDataAnimalById(animal.id));
+            dispatch(addFavouriteAnimal(animal.id));
             setActiveFavorite(true);
             break;
 
         default:
-            setActiveFavorite(false);
         }
 
         dispatch(votingActionsActions.addAction(value));
@@ -67,6 +79,7 @@ export const VotingActions = (props: VotingActionsProps) => {
                     id: animal.id,
                     time: formattedTime,
                     action: item,
+                    status: 'added',
                 };
 
                 return (
